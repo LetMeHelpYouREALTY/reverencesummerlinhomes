@@ -91,3 +91,7 @@ npx vercel --prod
 ---
 
 **Status:** ✅ Auto-deploy path audited and build configuration fixed
+
+**Latest production commit should be:** `19fba9e` or newer (`framework: react-router` restored).
+
+If build succeeds but the live domain shows old content, open Vercel → Deployments → find the successful build → **Promote to Production**.
