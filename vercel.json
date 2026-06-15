@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
   "installCommand": "npm ci",
-  "framework": null,
+  "framework": "react-router",
   "regions": ["iad1"],
   "headers": [
     {
