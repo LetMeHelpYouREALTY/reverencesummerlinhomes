@@ -70,6 +70,7 @@ export default [
       ),
       route('kestrel', 'routes/communities/kestrel.tsx'),
       route('skye-canyon', 'routes/communities/skye-canyon.tsx'),
+      route('silverstone-ranch', 'routes/communities/silverstone-ranch.tsx'),
       route('henderson', 'routes/communities/henderson.tsx'),
     ]),
 

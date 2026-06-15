@@ -104,6 +104,37 @@ export const communitiesData = [
     ],
     highlights: ['Master-Planned Community', 'Award-Winning'],
   },
+  {
+    id: 'silverstone-ranch',
+    name: 'Silverstone Ranch',
+    builder: 'Pulte Homes',
+    village: 'Centennial Hills',
+    type: 'Single Family Homes & Townhomes',
+    priceRange: '$450K - $1.1M+',
+    sqftRange: '1,345 - 4,050 sq ft',
+    beds: '2-5',
+    baths: '2-3.5',
+    description:
+      'Guard-gated master-planned enclave in Northwest Las Vegas with Floyd Lamb Park next door',
+    features: [
+      'Guard-gated',
+      'Mountain views',
+      '9 sub-neighborhoods',
+      'Mature landscaping',
+    ],
+    amenities: [
+      '6-acre family park',
+      'Tennis & pickleball courts',
+      'Walking & biking trails',
+      'Basketball courts',
+      'Floyd Lamb Park adjacent',
+    ],
+    highlights: [
+      'Guard-Gated Community',
+      'Floyd Lamb Park Next Door',
+      'Pulte Homes Built',
+    ],
+  },
 ]
 
 export const neighborhoodsData = [
