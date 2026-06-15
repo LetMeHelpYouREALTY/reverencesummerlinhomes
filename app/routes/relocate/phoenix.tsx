@@ -3,21 +3,14 @@ import { config } from '~/lib/config'
 import { RealScoutAdvancedSearch } from '~/components/RealScoutAdvancedSearch'
 import { RealScoutListingsWidget } from '~/components/RealScoutListingsWidget'
 import { Card, CardContent } from '~/components/ui/card'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/relocate/phoenix` }]
 }
 
 export function meta() {
-  return [
-    { title: 'Relocate from Phoenix to Las Vegas | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'Moving from Phoenix to Las Vegas? Dr. Jan Duffy helps Phoenix residents relocate to Las Vegas with expert guidance on neighborhoods, taxes, and lifestyle.',
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/relocate/phoenix` },
-  ]
+  return silverstonePageMeta('relocate-phoenix')
 }
 
 export default function RelocatePhoenix() {

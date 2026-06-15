@@ -28,6 +28,7 @@ import {
   Award,
   Shield,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [
@@ -39,46 +40,7 @@ export function links() {
 }
 
 export function meta() {
-  return [
-    {
-      title:
-        'Summerlin West Homes for Sale | Luxury Living in Las Vegas | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Discover luxury homes in Summerlin West, Las Vegas. Dr. Jan Duffy specializes in Summerlin West real estate with Red Rock views, golf courses, and premier amenities. Expert guidance for your dream home.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Summerlin West homes, Las Vegas luxury real estate, Red Rock views, golf course homes, Summerlin West realtor, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: 'Summerlin West Homes for Sale | Luxury Living in Las Vegas',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Discover luxury homes in Summerlin West with Red Rock views, golf courses, and premier amenities. Expert real estate guidance from Dr. Jan Duffy.',
-    },
-    { property: 'og:type', content: 'website' },
-    {
-      property: 'og:url',
-      content: `${config.seo.siteUrl}/communities/summerlin-west`,
-    },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    {
-      name: 'twitter:title',
-      content: 'Summerlin West Homes for Sale | Dr. Jan Duffy',
-    },
-    {
-      name: 'twitter:description',
-      content:
-        'Luxury homes in Summerlin West with Red Rock views and premier amenities.',
-    },
-  ]
+  return silverstonePageMeta('communities-summerlin-west')
 }
 
 export default function SummerlinWest() {

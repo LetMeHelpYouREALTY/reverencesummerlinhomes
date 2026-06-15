@@ -26,38 +26,14 @@ import {
   Target,
   Zap,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/about` }]
 }
 
 export function meta() {
-  return [
-    {
-      title:
-        'About Dr. Jan Duffy | Reverence Summerlin Real Estate Expert | Las Vegas',
-    },
-    {
-      name: 'description',
-      content:
-        'Learn about Dr. Jan Duffy, Reverence Summerlin real estate expert specializing in Monument at Reverence, Summerlin communities, and luxury properties in Las Vegas. Certified Summerlin specialist and featured Pulte Homes agent.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Dr. Jan Duffy, Reverence Summerlin real estate, Monument at Reverence agent, Summerlin real estate expert, Las Vegas real estate agent, Pulte Homes agent Reverence Summerlin',
-    },
-    {
-      property: 'og:title',
-      content: 'About Dr. Jan Duffy | Reverence Summerlin Real Estate Expert',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Learn about Dr. Jan Duffy, Reverence Summerlin real estate expert specializing in Monument at Reverence and Summerlin communities in Las Vegas.',
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/about` },
-  ]
+  return silverstonePageMeta('about')
 }
 
 export default function AboutIndex() {

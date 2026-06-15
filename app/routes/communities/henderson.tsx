@@ -30,44 +30,10 @@ import {
   Waves,
   Building,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    {
-      title:
-        'Henderson Homes for Sale | Family-Friendly Living in Nevada | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Discover homes for sale in Henderson, Nevada. Dr. Jan Duffy specializes in Henderson real estate with family-friendly communities, excellent schools, and outdoor recreation.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Henderson homes for sale, Henderson Nevada real estate, family-friendly communities, excellent schools, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: 'Henderson Homes for Sale | Family-Friendly Living in Nevada',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Homes for sale in Henderson, Nevada with family-friendly communities, excellent schools, and outdoor recreation. Expert real estate guidance from Dr. Jan Duffy.',
-    },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    {
-      name: 'twitter:title',
-      content: 'Henderson Homes for Sale | Dr. Jan Duffy',
-    },
-    {
-      name: 'twitter:description',
-      content:
-        'Homes for sale in Henderson, Nevada with family-friendly communities and excellent schools.',
-    },
-  ]
+  return silverstonePageMeta('communities-henderson')
 }
 
 export default function Henderson() {

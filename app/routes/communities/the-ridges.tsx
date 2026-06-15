@@ -30,6 +30,7 @@ import {
   TreePine,
   Waves,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [
@@ -38,46 +39,7 @@ export function links() {
 }
 
 export function meta() {
-  return [
-    {
-      title:
-        'The Ridges Luxury Homes | Ultra-Luxury Living in Summerlin | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        "Discover ultra-luxury homes in The Ridges, Summerlin's most exclusive community. Dr. Jan Duffy specializes in The Ridges real estate with Red Rock views, championship golf, and resort-style amenities.",
-    },
-    {
-      name: 'keywords',
-      content:
-        'The Ridges homes, Summerlin luxury real estate, ultra-luxury homes, Red Rock views, championship golf, The Ridges realtor, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: 'The Ridges Luxury Homes | Ultra-Luxury Living in Summerlin',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Ultra-luxury homes in The Ridges with Red Rock views, championship golf, and resort-style amenities. Expert real estate guidance from Dr. Jan Duffy.',
-    },
-    { property: 'og:type', content: 'website' },
-    {
-      property: 'og:url',
-      content: `${config.seo.siteUrl}/communities/the-ridges`,
-    },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    {
-      name: 'twitter:title',
-      content: 'The Ridges Luxury Homes | Dr. Jan Duffy',
-    },
-    {
-      name: 'twitter:description',
-      content:
-        'Ultra-luxury homes in The Ridges with Red Rock views and championship golf.',
-    },
-  ]
+  return silverstonePageMeta('communities-the-ridges')
 }
 
 export default function TheRidges() {

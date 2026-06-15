@@ -1,5 +1,6 @@
 import type { Route } from './+types/selling-foreclosure-avoidance'
 import { config } from '~/lib/config'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [
@@ -11,29 +12,7 @@ export function links() {
 }
 
 export function meta() {
-  return [
-    { title: 'Foreclosure Avoidance | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        "Avoid foreclosure with Dr. Jan Duffy's expert guidance. Explore loan modifications, short sales, and other alternatives to keep your Las Vegas home.",
-    },
-    {
-      name: 'keywords',
-      content:
-        'foreclosure avoidance Las Vegas, loan modification, short sale, foreclosure help Las Vegas',
-    },
-    { property: 'og:title', content: 'Foreclosure Avoidance | Dr. Jan Duffy' },
-    {
-      property: 'og:description',
-      content:
-        "Avoid foreclosure with Dr. Jan Duffy's expert guidance. Explore loan modifications, short sales, and other alternatives to keep your Las Vegas home.",
-    },
-    {
-      property: 'og:url',
-      content: `${config.seo.siteUrl}/selling/foreclosure-avoidance`,
-    },
-  ]
+  return silverstonePageMeta('selling-foreclosure-avoidance')
 }
 
 export default function ForeclosureAvoidance() {

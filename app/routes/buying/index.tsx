@@ -3,36 +3,14 @@ import { config } from '~/lib/config'
 import { RealScoutListingsWidget } from '~/components/RealScoutListingsWidget'
 import { RealScoutAdvancedSearch } from '~/components/RealScoutAdvancedSearch'
 import { Card, CardContent } from '~/components/ui/card'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/buying` }]
 }
 
 export function meta() {
-  return [
-    { title: 'Buying a Home in Las Vegas | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'Expert guidance for buying a home in Las Vegas and Summerlin. Dr. Jan Duffy provides personalized assistance for first-time buyers, military veterans, and relocating families.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'buy home Las Vegas, Summerlin real estate, first time home buyer, Las Vegas homes for sale',
-    },
-    {
-      property: 'og:title',
-      content: 'Buying a Home in Las Vegas | Dr. Jan Duffy',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Expert guidance for buying a home in Las Vegas and Summerlin. Dr. Jan Duffy provides personalized assistance for first-time buyers, military veterans, and relocating families.',
-    },
-    { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: `${config.seo.siteUrl}/buying` },
-  ]
+  return silverstonePageMeta('buying')
 }
 
 export default function BuyingIndex() {

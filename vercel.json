@@ -1,9 +1,8 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
-  "outputDirectory": "build/client",
-  "framework": "react-router",
   "installCommand": "npm ci",
-  "devCommand": "npx react-router dev",
+  "framework": null,
   "regions": ["iad1"],
   "headers": [
     {
@@ -55,12 +54,6 @@
       "source": "/home",
       "destination": "/",
       "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/sitemap.xml",
-      "destination": "/api/sitemap"
     }
   ]
 }

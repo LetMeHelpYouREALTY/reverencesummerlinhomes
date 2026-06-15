@@ -34,44 +34,10 @@ import {
   Sun,
   Bird,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    {
-      title:
-        'Kestrel Homes for Sale | Luxury Living & Natural Beauty | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Discover homes for sale in Kestrel, Las Vegas. Dr. Jan Duffy specializes in Kestrel real estate with luxury amenities, natural beauty, and exclusive living.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Kestrel homes for sale, Kestrel Las Vegas real estate, luxury living, natural beauty, exclusive community, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: 'Kestrel Homes for Sale | Luxury Living & Natural Beauty',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Homes for sale in Kestrel, Las Vegas with luxury amenities, natural beauty, and exclusive living. Expert real estate guidance from Dr. Jan Duffy.',
-    },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    {
-      name: 'twitter:title',
-      content: 'Kestrel Homes for Sale | Dr. Jan Duffy',
-    },
-    {
-      name: 'twitter:description',
-      content:
-        'Homes for sale in Kestrel, Las Vegas with luxury amenities and natural beauty.',
-    },
-  ]
+  return silverstonePageMeta('communities-kestrel')
 }
 
 export default function Kestrel() {

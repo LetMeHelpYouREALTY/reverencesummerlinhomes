@@ -1,14 +1,8 @@
 import type { Route } from './+types/communities'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    { title: 'Astra La Madre Peaks | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'Astra La Madre Peaks homes for sale. Dr. Jan Duffy helps you find homes in this exclusive community.',
-    },
-  ]
+  return silverstonePageMeta('communities-astra-la-madre-peaks')
 }
 
 export default function AstraLaMadrePeaks() {

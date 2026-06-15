@@ -95,6 +95,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Google Search Console verification — set GOOGLE_SITE_VERIFICATION in Vercel env */}
+        {process.env['GOOGLE_SITE_VERIFICATION'] && (
+          <meta
+            name="google-site-verification"
+            content={process.env['GOOGLE_SITE_VERIFICATION']}
+          />
+        )}
         <Meta />
         <Links />
 
@@ -119,6 +126,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 addressCountry: 'US',
               },
               areaServed: [
+                {
+                  '@type': 'Place',
+                  name: 'Silverstone Ranch',
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: 'Las Vegas',
+                    addressRegion: 'NV',
+                    postalCode: '89131',
+                    addressCountry: 'US',
+                  },
+                },
                 {
                   '@type': 'City',
                   name: 'Las Vegas',
@@ -147,6 +165,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 },
               ],
               knowsAbout: [
+                'Silverstone Ranch Real Estate',
+                'Centennial Hills Homes',
+                'Guard-Gated Communities',
                 'Las Vegas Real Estate',
                 'Summerlin Real Estate',
                 'New Construction',

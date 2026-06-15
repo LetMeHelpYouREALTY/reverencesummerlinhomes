@@ -1,28 +1,8 @@
 import type { Route } from './+types/selling-marketing'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    { title: 'Home Marketing Services | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'Professional home marketing services in Las Vegas. Dr. Jan Duffy provides comprehensive marketing strategies including photography, virtual tours, and targeted advertising.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'home marketing Las Vegas, real estate marketing, home photography, virtual tours Las Vegas',
-    },
-    {
-      property: 'og:title',
-      content: 'Home Marketing Services | Dr. Jan Duffy',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Professional home marketing services in Las Vegas. Dr. Jan Duffy provides comprehensive marketing strategies including photography, virtual tours, and targeted advertising.',
-    },
-  ]
+  return silverstonePageMeta('selling-marketing')
 }
 
 export default function Marketing() {

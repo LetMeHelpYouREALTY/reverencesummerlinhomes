@@ -30,6 +30,7 @@ import {
   Coffee,
   Utensils,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [
@@ -41,46 +42,7 @@ export function links() {
 }
 
 export function meta() {
-  return [
-    {
-      title:
-        'Downtown Summerlin Homes | Urban Living in Las Vegas | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Discover urban living in Downtown Summerlin, Las Vegas. Dr. Jan Duffy specializes in Downtown Summerlin real estate with shopping, dining, entertainment, and modern amenities.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Downtown Summerlin homes, Las Vegas urban real estate, shopping district homes, Downtown Summerlin realtor, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: 'Downtown Summerlin Homes | Urban Living in Las Vegas',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Urban living in Downtown Summerlin with shopping, dining, entertainment, and modern amenities. Expert real estate guidance from Dr. Jan Duffy.',
-    },
-    { property: 'og:type', content: 'website' },
-    {
-      property: 'og:url',
-      content: `${config.seo.siteUrl}/communities/downtown-summerlin`,
-    },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    {
-      name: 'twitter:title',
-      content: 'Downtown Summerlin Homes | Dr. Jan Duffy',
-    },
-    {
-      name: 'twitter:description',
-      content:
-        'Urban living in Downtown Summerlin with shopping, dining, and entertainment.',
-    },
-  ]
+  return silverstonePageMeta('communities-downtown-summerlin')
 }
 
 export default function DowntownSummerlin() {

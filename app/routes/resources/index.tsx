@@ -24,38 +24,14 @@ import {
   CheckCircle,
   Star,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/resources` }]
 }
 
 export function meta() {
-  return [
-    {
-      title:
-        'Reverence Summerlin Resources | Las Vegas Living Guide | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Comprehensive guide to Reverence Summerlin resources including schools, golf courses, trails, pools, tennis facilities, and community amenities. Dr. Jan Duffy provides essential local information for Reverence Summerlin residents.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Reverence Summerlin resources, Monument at Reverence resources, Summerlin schools, golf courses Reverence Summerlin, trails Reverence Summerlin, pools Reverence Summerlin',
-    },
-    {
-      property: 'og:title',
-      content: 'Reverence Summerlin Resources | Las Vegas Living Guide',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Comprehensive guide to Reverence Summerlin resources including schools, golf courses, trails, pools, and community amenities.',
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/resources` },
-  ]
+  return silverstonePageMeta('resources')
 }
 
 export default function ResourcesIndex() {

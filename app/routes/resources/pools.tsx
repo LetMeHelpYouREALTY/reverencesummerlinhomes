@@ -1,20 +1,13 @@
 import type { Route } from './+types/resources'
 import { config } from '~/lib/config'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/resources/pools` }]
 }
 
 export function meta() {
-  return [
-    { title: 'Las Vegas Pools | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'Las Vegas pools and aquatic centers. Dr. Jan Duffy helps you find the best pools in Las Vegas.',
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/resources/pools` },
-  ]
+  return silverstonePageMeta('resources-pools')
 }
 
 export default function Pools() {

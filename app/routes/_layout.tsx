@@ -2,31 +2,11 @@ import { Outlet } from 'react-router'
 import { Header } from '~/components/Header'
 import { Footer } from '~/components/Footer'
 import { StickyPhoneBar } from '~/components/StickyPhoneBar'
-import type { Route } from './+types/_layout'
+import { HyperlocalSilverstoneSection } from '~/components/HyperlocalSilverstoneSection'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    { title: 'Dr. Jan Duffy - Las Vegas Real Estate Expert' },
-    {
-      name: 'description',
-      content:
-        'Expert real estate services in Las Vegas and Summerlin. Dr. Jan Duffy provides personalized assistance for buying, selling, and relocating to Las Vegas.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Las Vegas real estate, Summerlin homes, Las Vegas real estate agent, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: 'Dr. Jan Duffy - Las Vegas Real Estate Expert',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Expert real estate services in Las Vegas and Summerlin. Dr. Jan Duffy provides personalized assistance for buying, selling, and relocating to Las Vegas.',
-    },
-  ]
+  return silverstonePageMeta('layout')
 }
 
 export default function Layout() {
@@ -36,6 +16,7 @@ export default function Layout() {
       <main className="flex-1">
         <Outlet />
       </main>
+      <HyperlocalSilverstoneSection />
       <Footer />
       <StickyPhoneBar />
     </div>

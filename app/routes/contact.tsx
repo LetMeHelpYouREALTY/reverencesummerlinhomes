@@ -29,38 +29,14 @@ import {
   TrendingUp,
 } from 'lucide-react'
 import type { Route } from './+types/contact'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/contact` }]
 }
 
 export function meta() {
-  return [
-    {
-      title:
-        'Contact Dr. Jan Duffy | Reverence Summerlin Real Estate Expert | Las Vegas',
-    },
-    {
-      name: 'description',
-      content:
-        'Contact Dr. Jan Duffy for expert real estate services in Reverence Summerlin, Monument at Reverence, and Las Vegas. Get personalized assistance for buying, selling, or relocating to Reverence Summerlin.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'contact Reverence Summerlin real estate, Dr. Jan Duffy contact, Monument at Reverence agent, Reverence Summerlin real estate consultation, Las Vegas real estate contact',
-    },
-    {
-      property: 'og:title',
-      content: 'Contact Dr. Jan Duffy | Reverence Summerlin Real Estate Expert',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Contact Dr. Jan Duffy for expert real estate services in Reverence Summerlin, Monument at Reverence, and Las Vegas. Get personalized assistance for buying, selling, or relocating to Reverence Summerlin.',
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/contact` },
-  ]
+  return silverstonePageMeta('contact')
 }
 
 export async function action({ request }: Route.ActionArgs) {

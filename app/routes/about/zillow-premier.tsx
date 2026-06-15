@@ -24,6 +24,7 @@ import {
   Mail,
   MapPin,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [
@@ -32,36 +33,7 @@ export function links() {
 }
 
 export function meta() {
-  return [
-    {
-      title:
-        'Dr. Jan Duffy Zillow Premier Agent | Reverence Summerlin Real Estate | Las Vegas',
-    },
-    {
-      name: 'description',
-      content:
-        'Dr. Jan Duffy is a Zillow Premier Agent specializing in Reverence Summerlin real estate, Monument at Reverence, and Las Vegas luxury properties. Certified Summerlin specialist with proven results.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Zillow Premier Agent Reverence Summerlin, Dr. Jan Duffy Zillow Premier, Zillow Premier Las Vegas, Monument at Reverence Zillow Premier, Summerlin Zillow Premier agent',
-    },
-    {
-      property: 'og:title',
-      content:
-        'Dr. Jan Duffy Zillow Premier Agent | Reverence Summerlin Real Estate',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Dr. Jan Duffy is a Zillow Premier Agent specializing in Reverence Summerlin real estate, Monument at Reverence, and Las Vegas luxury properties.',
-    },
-    {
-      property: 'og:url',
-      content: `${config.seo.siteUrl}/about/zillow-premier`,
-    },
-  ]
+  return silverstonePageMeta('about-zillow-premier')
 }
 
 export default function ZillowPremier() {

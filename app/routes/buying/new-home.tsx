@@ -27,39 +27,14 @@ import {
   Calendar,
   FileText,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/buying/new-home` }]
 }
 
 export function meta() {
-  return [
-    {
-      title:
-        'New Home Construction in Reverence Summerlin | Monument at Reverence | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Explore new home construction options in Reverence Summerlin, including Monument at Reverence. Dr. Jan Duffy helps you navigate new home buying in Reverence Summerlin with builder relationships and construction expertise.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'new homes Reverence Summerlin, Monument at Reverence, new construction Reverence Summerlin, Pulte Homes Reverence Summerlin, new home communities Reverence Summerlin',
-    },
-    {
-      property: 'og:title',
-      content:
-        'New Home Construction in Reverence Summerlin | Monument at Reverence',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Explore new home construction options in Reverence Summerlin, including Monument at Reverence. Dr. Jan Duffy helps you navigate new home buying in Reverence Summerlin.',
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/buying/new-home` },
-  ]
+  return silverstonePageMeta('buying-new-home')
 }
 
 export default function NewHome() {

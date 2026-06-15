@@ -27,30 +27,10 @@ import {
   GraduationCap,
   Car,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    { title: `${monumentData.name} | ${config.seo.siteName}` },
-    {
-      name: 'description',
-      content: `${monumentData.description.short} Expert guidance from Dr. Jan Duffy, featured Pulte Homes agent. Starting from the $500s.`,
-    },
-    {
-      name: 'keywords',
-      content:
-        'Monument at Reverence, Pulte Homes, Summerlin townhomes, new construction Las Vegas, Reverence community, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: `${monumentData.name} | ${config.seo.siteName}`,
-    },
-    { property: 'og:description', content: monumentData.description.short },
-    { property: 'og:type', content: 'website' },
-    {
-      property: 'og:url',
-      content: `${config.seo.siteUrl}/communities/monument-at-reverence`,
-    },
-  ]
+  return silverstonePageMeta('communities-monument-at-reverence')
 }
 
 export function links() {

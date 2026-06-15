@@ -31,44 +31,10 @@ import {
   Building,
   Zap,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    {
-      title:
-        'Boulder City Homes for Sale | Historic Small Town Living | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Discover homes for sale in Boulder City, Nevada. Dr. Jan Duffy specializes in Boulder City real estate with historic charm, outdoor recreation, and small-town living.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Boulder City homes for sale, Boulder City Nevada real estate, historic homes, outdoor recreation, small town living, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: 'Boulder City Homes for Sale | Historic Small Town Living',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Homes for sale in Boulder City, Nevada with historic charm, outdoor recreation, and small-town living. Expert real estate guidance from Dr. Jan Duffy.',
-    },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    {
-      name: 'twitter:title',
-      content: 'Boulder City Homes for Sale | Dr. Jan Duffy',
-    },
-    {
-      name: 'twitter:description',
-      content:
-        'Homes for sale in Boulder City, Nevada with historic charm and outdoor recreation.',
-    },
-  ]
+  return silverstonePageMeta('communities-boulder-city')
 }
 
 export default function BoulderCity() {

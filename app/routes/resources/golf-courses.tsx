@@ -24,6 +24,7 @@ import {
   Mountain,
   TreePine,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [
@@ -32,35 +33,7 @@ export function links() {
 }
 
 export function meta() {
-  return [
-    {
-      title:
-        'Golf Courses Near Reverence Summerlin | Las Vegas Golf Guide | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Discover premier golf courses near Reverence Summerlin, Las Vegas. Comprehensive guide to golf courses accessible from Reverence Summerlin, including public and private courses, memberships, and golf communities.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'golf courses Reverence Summerlin, Reverence Summerlin golf, Las Vegas golf courses, golf near Reverence Summerlin, Summerlin golf, Monument at Reverence golf',
-    },
-    {
-      property: 'og:title',
-      content: 'Golf Courses Near Reverence Summerlin | Las Vegas Golf Guide',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Discover premier golf courses near Reverence Summerlin, Las Vegas. Comprehensive guide to golf courses accessible from Reverence Summerlin communities.',
-    },
-    {
-      property: 'og:url',
-      content: `${config.seo.siteUrl}/resources/golf-courses`,
-    },
-  ]
+  return silverstonePageMeta('resources-golf-courses')
 }
 
 export default function GolfCourses() {

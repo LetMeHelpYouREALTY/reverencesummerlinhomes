@@ -1,20 +1,13 @@
 import type { Route } from './+types/about'
 import { config } from '~/lib/config'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/about/reviews` }]
 }
 
 export function meta() {
-  return [
-    { title: 'Dr. Jan Duffy Reviews | Las Vegas Real Estate Expert' },
-    {
-      name: 'description',
-      content:
-        "Read reviews and testimonials from Dr. Jan Duffy's clients. Las Vegas real estate expert reviews.",
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/about/reviews` },
-  ]
+  return silverstonePageMeta('about-reviews')
 }
 
 export default function Reviews() {

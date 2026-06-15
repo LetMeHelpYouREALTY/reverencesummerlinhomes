@@ -26,35 +26,10 @@ import {
   BarChart3,
 } from 'lucide-react'
 import type { Route } from './+types/neighborhood-comparison'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    { title: 'Las Vegas Neighborhood Comparison Tool | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        "Compare Las Vegas neighborhoods side-by-side with detailed market data, amenities, schools, and lifestyle factors. Make informed decisions with Dr. Jan Duffy's expert analysis.",
-    },
-    {
-      name: 'keywords',
-      content:
-        'Las Vegas neighborhoods, Summerlin comparison, Henderson vs Summerlin, Las Vegas real estate comparison, neighborhood analysis',
-    },
-    {
-      property: 'og:title',
-      content: 'Las Vegas Neighborhood Comparison Tool | Dr. Jan Duffy',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Compare Las Vegas neighborhoods with detailed market data and lifestyle factors.',
-    },
-    { property: 'og:type', content: 'website' },
-    {
-      property: 'og:url',
-      content: `${config.seo.siteUrl}/neighborhood-comparison`,
-    },
-  ]
+  return silverstonePageMeta('neighborhood-comparison')
 }
 
 const neighborhoodData = [

@@ -41,7 +41,12 @@ export async function loader({ request }: Route.LoaderArgs) {
       .filter(community => validCommunityIds.includes(community.id))
       .map(community => ({
         url: `/communities/${community.id}`,
-        priority: community.id === 'monument-at-reverence' ? '0.9' : '0.8',
+        priority:
+          community.id === 'silverstone-ranch'
+            ? '1.0'
+            : community.id === 'monument-at-reverence'
+              ? '0.9'
+              : '0.8',
         changefreq: 'weekly',
         images: [
           {

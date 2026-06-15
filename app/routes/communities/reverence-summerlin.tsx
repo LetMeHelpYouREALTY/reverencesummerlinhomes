@@ -1,14 +1,8 @@
 import type { Route } from './+types/communities'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    { title: 'Reverence Summerlin | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'Reverence Summerlin homes for sale. Dr. Jan Duffy helps you find homes in Reverence Summerlin.',
-    },
-  ]
+  return silverstonePageMeta('communities-reverence-summerlin')
 }
 
 export default function ReverenceSummerlin() {

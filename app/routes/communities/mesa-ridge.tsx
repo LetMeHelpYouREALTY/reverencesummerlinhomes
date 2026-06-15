@@ -33,44 +33,10 @@ import {
   Car,
   Sun,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    {
-      title:
-        'Mesa Ridge Homes for Sale | Mountain Views & Modern Living | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Discover homes for sale in Mesa Ridge, Las Vegas. Dr. Jan Duffy specializes in Mesa Ridge real estate with mountain views, modern amenities, and scenic living.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Mesa Ridge homes for sale, Mesa Ridge Las Vegas real estate, mountain views, modern living, scenic homes, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: 'Mesa Ridge Homes for Sale | Mountain Views & Modern Living',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Homes for sale in Mesa Ridge, Las Vegas with mountain views, modern amenities, and scenic living. Expert real estate guidance from Dr. Jan Duffy.',
-    },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    {
-      name: 'twitter:title',
-      content: 'Mesa Ridge Homes for Sale | Dr. Jan Duffy',
-    },
-    {
-      name: 'twitter:description',
-      content:
-        'Homes for sale in Mesa Ridge, Las Vegas with mountain views and modern amenities.',
-    },
-  ]
+  return silverstonePageMeta('communities-mesa-ridge')
 }
 
 export default function MesaRidge() {

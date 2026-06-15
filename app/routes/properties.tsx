@@ -32,35 +32,14 @@ import {
 } from 'lucide-react'
 import type { Route } from './+types/properties'
 import { config } from '~/lib/config'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/properties` }]
 }
 
 export function meta() {
-  return [
-    { title: 'Las Vegas Properties for Sale | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'Browse Las Vegas and Summerlin properties for sale. Dr. Jan Duffy helps you find the perfect home with expert guidance and local market knowledge.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Las Vegas homes for sale, Summerlin properties, Las Vegas real estate listings',
-    },
-    {
-      property: 'og:title',
-      content: 'Las Vegas Properties for Sale | Dr. Jan Duffy',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Browse Las Vegas and Summerlin properties for sale. Dr. Jan Duffy helps you find the perfect home with expert guidance and local market knowledge.',
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/properties` },
-  ]
+  return silverstonePageMeta('properties')
 }
 
 export default function Properties() {

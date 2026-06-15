@@ -3,21 +3,14 @@ import { config } from '~/lib/config'
 import { RealScoutAdvancedSearch } from '~/components/RealScoutAdvancedSearch'
 import { RealScoutListingsWidget } from '~/components/RealScoutListingsWidget'
 import { Card, CardContent } from '~/components/ui/card'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/relocate/new-york` }]
 }
 
 export function meta() {
-  return [
-    { title: 'Relocate from New York to Las Vegas | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'Moving from New York to Las Vegas? Dr. Jan Duffy helps NYC residents relocate to Las Vegas with expert guidance on neighborhoods, taxes, and lifestyle.',
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/relocate/new-york` },
-  ]
+  return silverstonePageMeta('relocate-new-york')
 }
 
 export default function RelocateNewYork() {

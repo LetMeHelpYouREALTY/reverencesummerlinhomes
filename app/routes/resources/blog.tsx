@@ -22,40 +22,14 @@ import {
   Star,
   Award,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/resources/blog` }]
 }
 
 export function meta() {
-  return [
-    {
-      title:
-        'Las Vegas Real Estate Blog | Market Insights & Tips | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        "Stay informed with Dr. Jan Duffy's Las Vegas real estate blog. Get market insights, buying tips, selling strategies, and local community updates.",
-    },
-    {
-      name: 'keywords',
-      content:
-        'Las Vegas real estate blog, Summerlin market trends, home buying tips, selling strategies, Las Vegas housing market',
-    },
-    {
-      property: 'og:title',
-      content: 'Las Vegas Real Estate Blog | Dr. Jan Duffy',
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/resources/blog` },
-    {
-      property: 'og:description',
-      content:
-        'Market insights, tips, and local information from Las Vegas real estate expert Dr. Jan Duffy.',
-    },
-    { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: `${config.seo.siteUrl}/resources/blog` },
-  ]
+  return silverstonePageMeta('resources-blog')
 }
 
 const blogPosts = [

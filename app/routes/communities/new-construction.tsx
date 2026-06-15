@@ -32,44 +32,10 @@ import {
   Wrench,
   Zap,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    {
-      title:
-        'New Construction Homes Las Vegas | Brand New Builds | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Discover new construction homes in Las Vegas. Dr. Jan Duffy specializes in new build homes with modern features, energy efficiency, and customization options.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'new construction homes Las Vegas, new build homes, custom homes, energy efficient homes, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: 'New Construction Homes Las Vegas | Brand New Builds',
-    },
-    {
-      property: 'og:description',
-      content:
-        'New construction homes in Las Vegas with modern features, energy efficiency, and customization options. Expert real estate guidance from Dr. Jan Duffy.',
-    },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    {
-      name: 'twitter:title',
-      content: 'New Construction Homes Las Vegas | Dr. Jan Duffy',
-    },
-    {
-      name: 'twitter:description',
-      content:
-        'New construction homes in Las Vegas with modern features and energy efficiency.',
-    },
-  ]
+  return silverstonePageMeta('communities-new-construction')
 }
 
 export default function NewConstruction() {

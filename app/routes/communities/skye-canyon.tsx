@@ -32,44 +32,10 @@ import {
   Zap,
   Car,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    {
-      title:
-        'Skye Canyon Homes for Sale | Master-Planned Community | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Discover homes for sale in Skye Canyon, Las Vegas. Dr. Jan Duffy specializes in Skye Canyon real estate with modern amenities, outdoor recreation, and family-friendly living.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Skye Canyon homes for sale, Skye Canyon Las Vegas real estate, master-planned community, outdoor recreation, family-friendly, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: 'Skye Canyon Homes for Sale | Master-Planned Community',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Homes for sale in Skye Canyon, Las Vegas with modern amenities, outdoor recreation, and family-friendly living. Expert real estate guidance from Dr. Jan Duffy.',
-    },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    {
-      name: 'twitter:title',
-      content: 'Skye Canyon Homes for Sale | Dr. Jan Duffy',
-    },
-    {
-      name: 'twitter:description',
-      content:
-        'Homes for sale in Skye Canyon, Las Vegas with modern amenities and outdoor recreation.',
-    },
-  ]
+  return silverstonePageMeta('communities-skye-canyon')
 }
 
 export default function SkyeCanyon() {

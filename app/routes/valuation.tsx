@@ -4,32 +4,14 @@ import { RealScoutListingsWidget } from '~/components/RealScoutListingsWidget'
 import { RealScoutAdvancedSearch } from '~/components/RealScoutAdvancedSearch'
 import { RealScoutHomeValueWidget } from '~/components/RealScoutHomeValueWidget'
 import { Card, CardContent } from '~/components/ui/card'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/valuation` }]
 }
 
 export function meta() {
-  return [
-    { title: 'Free Home Valuation | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        "Get a free, accurate home valuation for your Las Vegas property. Dr. Jan Duffy provides comprehensive market analysis to help you understand your home's current value.",
-    },
-    {
-      name: 'keywords',
-      content:
-        'home valuation Las Vegas, property value, home appraisal, Las Vegas home prices',
-    },
-    { property: 'og:title', content: 'Free Home Valuation | Dr. Jan Duffy' },
-    {
-      property: 'og:description',
-      content:
-        "Get a free, accurate home valuation for your Las Vegas property. Dr. Jan Duffy provides comprehensive market analysis to help you understand your home's current value.",
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/valuation` },
-  ]
+  return silverstonePageMeta('valuation')
 }
 
 export default function Valuation() {

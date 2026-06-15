@@ -27,31 +27,10 @@ import {
   Award,
 } from 'lucide-react'
 import type { Route } from './+types/market-trends'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    { title: 'Las Vegas Real Estate Market Trends | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'Stay informed with the latest Las Vegas real estate market trends, pricing data, and market insights from Dr. Jan Duffy. Make data-driven decisions.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Las Vegas real estate trends, Summerlin market data, Las Vegas home prices, real estate market analysis, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: 'Las Vegas Real Estate Market Trends | Dr. Jan Duffy',
-    },
-    {
-      property: 'og:description',
-      content: 'Latest Las Vegas real estate market trends and pricing data.',
-    },
-    { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: `${config.seo.siteUrl}/market-trends` },
-  ]
+  return silverstonePageMeta('market-trends')
 }
 
 const marketData = {

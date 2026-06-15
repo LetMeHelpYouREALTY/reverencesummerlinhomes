@@ -22,27 +22,10 @@ import {
   Mail,
 } from 'lucide-react'
 import type { Route } from './+types/buying-mortgage-calculator'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    { title: 'Mortgage Calculator | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        "Calculate your monthly mortgage payments for Las Vegas homes. Dr. Jan Duffy's mortgage calculator helps you understand financing options and budget for your new home.",
-    },
-    {
-      name: 'keywords',
-      content:
-        'mortgage calculator Las Vegas, home loan calculator, mortgage payment calculator, Las Vegas mortgage rates',
-    },
-    { property: 'og:title', content: 'Mortgage Calculator | Dr. Jan Duffy' },
-    {
-      property: 'og:description',
-      content:
-        "Calculate your monthly mortgage payments for Las Vegas homes. Dr. Jan Duffy's mortgage calculator helps you understand financing options and budget for your new home.",
-    },
-  ]
+  return silverstonePageMeta('buying-mortgage-calculator')
 }
 
 export default function MortgageCalculator() {

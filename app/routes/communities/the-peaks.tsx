@@ -1,14 +1,8 @@
 import type { Route } from './+types/communities'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    { title: 'The Peaks | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'The Peaks homes for sale. Dr. Jan Duffy helps you find homes in The Peaks.',
-    },
-  ]
+  return silverstonePageMeta('communities-the-peaks')
 }
 
 export default function ThePeaks() {

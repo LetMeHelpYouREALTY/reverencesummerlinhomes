@@ -26,35 +26,14 @@ import {
   Phone,
   Mail,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/selling` }]
 }
 
 export function meta() {
-  return [
-    { title: 'Selling Your Home in Reverence Summerlin | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'Expert guidance for selling your home in Reverence Summerlin and Las Vegas. Dr. Jan Duffy provides comprehensive selling services including marketing, pricing strategy, and foreclosure avoidance in the Reverence Summerlin area.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'sell home Reverence Summerlin, selling homes Reverence Summerlin, Reverence Summerlin real estate, home selling Las Vegas, Summerlin home sales, real estate agent Reverence Summerlin',
-    },
-    {
-      property: 'og:title',
-      content: 'Selling Your Home in Reverence Summerlin | Dr. Jan Duffy',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Expert guidance for selling your home in Reverence Summerlin and Las Vegas. Dr. Jan Duffy provides comprehensive selling services including marketing, pricing strategy, and foreclosure avoidance.',
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/selling` },
-  ]
+  return silverstonePageMeta('selling')
 }
 
 export default function SellingIndex() {

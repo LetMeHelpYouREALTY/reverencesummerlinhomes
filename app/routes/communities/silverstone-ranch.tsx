@@ -31,52 +31,12 @@ import {
   TrendingUp,
   AlertTriangle,
   Info,
-  Fence,
   Flag,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    {
-      title:
-        'Silverstone Ranch Homes for Sale Las Vegas | Guard-Gated Centennial Hills | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Silverstone Ranch is a guard-gated master-planned community in Northwest Las Vegas (89131). Median price $685K, 13 days on market. Expert guidance from Dr. Jan Duffy, Berkshire Hathaway HomeServices. Call (702) 930-8222.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Silverstone Ranch Las Vegas homes for sale, guard-gated Northwest Las Vegas, Silverstone Ranch real estate, Centennial Hills gated community, 89131 homes for sale, Silverstone Ranch The Palms, Pulte Homes Las Vegas 89131, Arbor View High School homes, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content:
-        'Silverstone Ranch Homes for Sale | Guard-Gated Centennial Hills Las Vegas',
-    },
-    {
-      property: 'og:description',
-      content:
-        "Discover Silverstone Ranch — Centennial Hills' signature guard-gated enclave. Median $685K, 9 sub-neighborhoods, Floyd Lamb Park next door. Expert guidance from Dr. Jan Duffy.",
-    },
-    { property: 'og:type', content: 'website' },
-    {
-      property: 'og:url',
-      content: `${config.seo.siteUrl}/communities/silverstone-ranch`,
-    },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    {
-      name: 'twitter:title',
-      content: 'Silverstone Ranch Homes for Sale Las Vegas | Dr. Jan Duffy',
-    },
-    {
-      name: 'twitter:description',
-      content:
-        'Guard-gated master-planned living in Northwest Las Vegas. Median $685K, 13 days on market. Floyd Lamb Park next door.',
-    },
-  ]
+  return silverstonePageMeta('communities-silverstone-ranch')
 }
 
 export function links() {

@@ -30,67 +30,10 @@ import {
   Calendar,
   ArrowRight,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    {
-      title: `Reverence Summerlin Real Estate Expert | Monument at Reverence | Dr. Jan Duffy`,
-    },
-    {
-      name: 'description',
-      content: `Expert real estate services in Reverence Summerlin, Monument at Reverence, and Las Vegas. Dr. Jan Duffy, certified Summerlin specialist and featured Pulte Homes agent at Monument at Reverence, helps you find your perfect Reverence Summerlin home.`,
-    },
-    {
-      name: 'keywords',
-      content:
-        'Reverence Summerlin real estate, Monument at Reverence, Reverence Summerlin homes, Dr. Jan Duffy, Summerlin real estate, Pulte Homes Reverence Summerlin, Las Vegas real estate',
-    },
-    // Open Graph meta tags
-    {
-      property: 'og:title',
-      content: `Reverence Summerlin Real Estate Expert | Monument at Reverence | Dr. Jan Duffy`,
-    },
-    {
-      property: 'og:description',
-      content: `Expert real estate services in Reverence Summerlin, Monument at Reverence, and Las Vegas. Dr. Jan Duffy helps you find your perfect Reverence Summerlin home.`,
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/` },
-    { property: 'og:type', content: 'website' },
-    { property: 'og:site_name', content: config.seo.siteName },
-    // Note: Using PNG for better compatibility. SVG works for Facebook but PNG is universally supported
-    {
-      property: 'og:image',
-      content: `${config.seo.siteUrl}/images/og-image.png`,
-    },
-    { property: 'og:image:width', content: '1200' },
-    { property: 'og:image:height', content: '630' },
-    {
-      property: 'og:image:alt',
-      content: `${config.agent.name} - Las Vegas Real Estate Expert`,
-    },
-    { property: 'og:locale', content: 'en_US' },
-    // Twitter Card meta tags
-    // Note: Twitter requires PNG, JPG, WEBP, or GIF - SVG is NOT supported
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: '@drjanduffy' },
-    { name: 'twitter:creator', content: '@drjanduffy' },
-    {
-      name: 'twitter:title',
-      content: `Reverence Summerlin Real Estate Expert | Monument at Reverence`,
-    },
-    {
-      name: 'twitter:description',
-      content: `Expert real estate services in Reverence Summerlin, Monument at Reverence, and Las Vegas. Dr. Jan Duffy helps you find your perfect Reverence Summerlin home.`,
-    },
-    {
-      name: 'twitter:image',
-      content: `${config.seo.siteUrl}/images/twitter-image.png`,
-    },
-    {
-      name: 'twitter:image:alt',
-      content: `${config.agent.name} - Las Vegas Real Estate Expert`,
-    },
-  ]
+  return silverstonePageMeta('home')
 }
 
 export const links: LinksFunction = () => [

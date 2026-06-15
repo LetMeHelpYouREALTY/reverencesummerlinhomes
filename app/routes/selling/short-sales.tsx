@@ -1,5 +1,6 @@
 import type { Route } from './+types/selling-short-sales'
 import { config } from '~/lib/config'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [
@@ -8,29 +9,7 @@ export function links() {
 }
 
 export function meta() {
-  return [
-    { title: 'Short Sales | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        "Navigate short sales with Dr. Jan Duffy's expert guidance. Professional short sale assistance for Las Vegas homeowners facing financial hardship.",
-    },
-    {
-      name: 'keywords',
-      content:
-        'short sale Las Vegas, short sale agent, short sale help, Las Vegas short sales',
-    },
-    { property: 'og:title', content: 'Short Sales | Dr. Jan Duffy' },
-    {
-      property: 'og:description',
-      content:
-        "Navigate short sales with Dr. Jan Duffy's expert guidance. Professional short sale assistance for Las Vegas homeowners facing financial hardship.",
-    },
-    {
-      property: 'og:url',
-      content: `${config.seo.siteUrl}/selling/short-sales`,
-    },
-  ]
+  return silverstonePageMeta('selling-short-sales')
 }
 
 export default function ShortSales() {

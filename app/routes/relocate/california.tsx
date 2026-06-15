@@ -3,6 +3,7 @@ import { RealScoutAdvancedSearch } from '~/components/RealScoutAdvancedSearch'
 import { RealScoutListingsWidget } from '~/components/RealScoutListingsWidget'
 import { Card, CardContent } from '~/components/ui/card'
 import { config } from '~/lib/config'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [
@@ -14,14 +15,7 @@ export function links() {
 }
 
 export function meta() {
-  return [
-    { title: 'Relocate from California to Las Vegas | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'Moving from California to Las Vegas? Dr. Jan Duffy helps California residents relocate to Las Vegas with expert guidance on neighborhoods, taxes, and lifestyle.',
-    },
-  ]
+  return silverstonePageMeta('relocate-california')
 }
 
 export default function RelocateCalifornia() {

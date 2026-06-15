@@ -31,44 +31,10 @@ import {
   Crown,
   Gem,
 } from 'lucide-react'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return [
-    {
-      title:
-        'Luxury Homes Las Vegas | Ultra-Luxury Real Estate | Dr. Jan Duffy',
-    },
-    {
-      name: 'description',
-      content:
-        'Discover ultra-luxury homes in Las Vegas. Dr. Jan Duffy specializes in luxury real estate with custom estates, resort amenities, and exclusive communities.',
-    },
-    {
-      name: 'keywords',
-      content:
-        'luxury homes Las Vegas, ultra-luxury real estate, custom estates, luxury communities, Dr. Jan Duffy',
-    },
-    {
-      property: 'og:title',
-      content: 'Luxury Homes Las Vegas | Ultra-Luxury Real Estate',
-    },
-    {
-      property: 'og:description',
-      content:
-        'Ultra-luxury homes in Las Vegas with custom estates, resort amenities, and exclusive communities. Expert real estate guidance from Dr. Jan Duffy.',
-    },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    {
-      name: 'twitter:title',
-      content: 'Luxury Homes Las Vegas | Dr. Jan Duffy',
-    },
-    {
-      name: 'twitter:description',
-      content:
-        'Ultra-luxury homes in Las Vegas with custom estates and resort amenities.',
-    },
-  ]
+  return silverstonePageMeta('communities-luxury-homes')
 }
 
 export default function LuxuryHomes() {

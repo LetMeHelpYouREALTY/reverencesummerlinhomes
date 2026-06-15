@@ -1,20 +1,13 @@
 import type { Route } from './+types/resources'
 import { config } from '~/lib/config'
+import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/resources/trails` }]
 }
 
 export function meta() {
-  return [
-    { title: 'Las Vegas Trails | Dr. Jan Duffy' },
-    {
-      name: 'description',
-      content:
-        'Las Vegas hiking trails guide. Dr. Jan Duffy helps you discover the best trails in Las Vegas.',
-    },
-    { property: 'og:url', content: `${config.seo.siteUrl}/resources/trails` },
-  ]
+  return silverstonePageMeta('resources-trails')
 }
 
 export default function Trails() {
