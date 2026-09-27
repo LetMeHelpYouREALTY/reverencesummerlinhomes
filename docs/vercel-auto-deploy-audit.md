@@ -68,6 +68,31 @@ Lint and typecheck were removed from CI gates until TS debt is resolved (~330 er
 
 ---
 
+## Git push did not deploy (2026-09-27 follow-up)
+
+**Verified**
+
+- Vercel project `prj_pUOjYbbN2KGic5l1kGKUx78sXG62` is linked to `LetMeHelpYouREALTY/reverencesummerlinhomes` (`get_git_deployment_context`).
+- Commit `654b2b0` on `main` produced a normal Git production deployment (`dpl_CWvj8UYewtkrNUiV15aJ1oR5ymgw`).
+- Commit `2781c1b` on `main` did **not** create a new Git deployment in the Vercel deployment list before a manual API deploy; only `dpl_7JSgDgem5v5i3qUc7nSSDG7GkWvu` exists for that SHA.
+- GitHub Actions **Deploy Production** workflow runs on every `main` push but **fails** at the Vercel deploy step (runs `36344330459` for `2781c1b`). CI build workflow succeeds.
+
+**Likely cause of missing backup deploys**
+
+- Repository secrets `VERCEL_TOKEN`, `VERCEL_ORG_ID`, and/or `VERCEL_PROJECT_ID` are missing or invalid, so the Actions fallback cannot deploy when Git integration is slow or skipped.
+
+**Repo fix applied**
+
+- `deploy-production.yml` now fails fast with explicit secret validation and uses `npx vercel@latest deploy --prebuilt --prod` after `npm run build`.
+
+**Dashboard checks if Git-only deploys stop again**
+
+- Project → Settings → Git → Production branch = `main`
+- Settings → Git → Ignored Build Step (should be empty unless you intentionally skip builds)
+- GitHub → repo → Settings → Webhooks → Vercel delivery errors
+
+---
+
 ## Verification Checklist
 
 After push to `main`:

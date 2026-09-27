@@ -12,6 +12,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Validate Vercel secrets
+        run: |
+          missing=0
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+            echo "::error::Missing repository secret VERCEL_TOKEN (required for GitHub Actions deploy fallback)."
+            missing=1
+          fi
+          if [ -z "${{ secrets.VERCEL_ORG_ID }}" ]; then
+            echo "::error::Missing repository secret VERCEL_ORG_ID."
+            missing=1
+          fi
+          if [ -z "${{ secrets.VERCEL_PROJECT_ID }}" ]; then
+            echo "::error::Missing repository secret VERCEL_PROJECT_ID (use prj_pUOjYbbN2KGic5l1kGKUx78sXG62)."
+            missing=1
+          fi
+          if [ "$missing" -ne 0 ]; then
+            echo "Configure secrets under GitHub → Settings → Secrets and variables → Actions."
+            echo "Primary deploy path remains the Vercel Git integration on push to main."
+            exit 1
+          fi
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -37,13 +58,10 @@ jobs:
           echo "✅ Build output verified"
 
       - name: Deploy to Vercel Production
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./
-          vercel-args: '--prod=true'
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: npx vercel@latest deploy --prebuilt --prod --yes --token "${{ secrets.VERCEL_TOKEN }}"
 
       - name: Deployment Success Notification
         run: |

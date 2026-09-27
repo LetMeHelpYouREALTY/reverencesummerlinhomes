@@ -1,32 +1,18 @@
-import { useState } from 'react'
+import { useFetcher } from 'react-router'
 import { config } from '~/lib/config'
+import { HOMEPAGE_CONTACT_LEAD, SITE_LEAD_SERVER_ERROR_MESSAGE } from '~/lib/site-lead'
+
+type LeadActionData = {
+  success?: boolean
+  message?: string
+  serverError?: boolean
+  errors?: Record<string, string>
+}
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    helpType: '',
-    message: '',
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    // TODO: Submit form data to API endpoint
-    // Form submission will be handled by API route
-  }
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
+  const fetcher = useFetcher<LeadActionData>()
+  const actionData = fetcher.data
+  const isSubmitting = fetcher.state !== 'idle'
 
   return (
     <section className="py-16 bg-primary text-white">
@@ -34,70 +20,50 @@ export function ContactSection() {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
           <p className="text-xl max-w-3xl mx-auto">
-            Whether you're looking at buying, selling, or relocating to Las
-            Vegas or Summerlin, I'm here to help. Let's start with a
+            Whether you&apos;re looking at buying, selling, or relocating to Las
+            Vegas or Summerlin, I&apos;m here to help. Let&apos;s start with a
             conversation to understand your real estate goals.
           </p>
         </div>
 
+        {actionData && (
+          <div
+            className={`mb-8 rounded-lg border p-4 ${
+              actionData.success
+                ? 'bg-green-900/40 border-green-300 text-green-50'
+                : 'bg-red-900/40 border-red-300 text-red-50'
+            }`}
+            role="alert"
+          >
+            <p className="font-semibold">
+              {actionData.success
+                ? 'Message sent'
+                : actionData.serverError
+                  ? 'Unable to send your message'
+                  : 'Please correct the errors below'}
+            </p>
+            <p className="mt-1">
+              {actionData.message ??
+                (actionData.serverError
+                  ? SITE_LEAD_SERVER_ERROR_MESSAGE
+                  : 'Please review the form fields.')}
+            </p>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
           <div>
             <div className="space-y-6">
               <div className="flex items-center">
-                <svg
-                  className="w-6 h-6 mr-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
+                <span className="mr-3" aria-hidden="true">✉</span>
                 <span>{config.contact.email}</span>
               </div>
-
               <div className="flex items-center">
-                <svg
-                  className="w-6 h-6 mr-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
+                <span className="mr-3" aria-hidden="true">☎</span>
                 <span>{config.contact.phone}</span>
               </div>
-
               <div className="flex items-center">
-                <svg
-                  className="w-6 h-6 mr-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
+                <span className="mr-3" aria-hidden="true">📍</span>
                 <span>{config.agent.office.fullAddress}</span>
               </div>
             </div>
@@ -119,77 +85,89 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <fetcher.Form method="post" action="/api/lead" className="space-y-6">
+              <input
+                type="hidden"
+                name="formName"
+                value={HOMEPAGE_CONTACT_LEAD.formName}
+              />
+              <input
+                type="hidden"
+                name="pageDescription"
+                value={HOMEPAGE_CONTACT_LEAD.pageDescription}
+              />
+              <input
+                type="hidden"
+                name="sourceUrl"
+                value={`${config.seo.siteUrl}${HOMEPAGE_CONTACT_LEAD.defaultSourcePath}`}
+              />
+
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="home-contact-name" className="block text-sm font-medium mb-2">
                   Name *
                 </label>
                 <input
                   type="text"
-                  id="name"
+                  id="home-contact-name"
                   name="name"
                   required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-md text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
+                  className={`w-full px-4 py-3 rounded-md text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary ${
+                    actionData?.errors?.name ? 'border-2 border-red-400' : ''
+                  }`}
                   placeholder="Your full name"
+                  aria-invalid={actionData?.errors?.name ? 'true' : 'false'}
                 />
+                {actionData?.errors?.name && (
+                  <p className="text-sm text-red-200 mt-1">{actionData.errors.name}</p>
+                )}
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="home-contact-email" className="block text-sm font-medium mb-2">
                   Email *
                 </label>
                 <input
                   type="email"
-                  id="email"
+                  id="home-contact-email"
                   name="email"
                   required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-md text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
+                  className={`w-full px-4 py-3 rounded-md text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary ${
+                    actionData?.errors?.email ? 'border-2 border-red-400' : ''
+                  }`}
                   placeholder="your.email@example.com"
+                  aria-invalid={actionData?.errors?.email ? 'true' : 'false'}
                 />
+                {actionData?.errors?.email && (
+                  <p className="text-sm text-red-200 mt-1">{actionData.errors.email}</p>
+                )}
               </div>
 
               <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="home-contact-phone" className="block text-sm font-medium mb-2">
                   Phone
                 </label>
                 <input
                   type="tel"
-                  id="phone"
+                  id="home-contact-phone"
                   name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-md text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
+                  className={`w-full px-4 py-3 rounded-md text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary ${
+                    actionData?.errors?.phone ? 'border-2 border-red-400' : ''
+                  }`}
                   placeholder="(702) 930-8222"
                 />
+                {actionData?.errors?.phone && (
+                  <p className="text-sm text-red-200 mt-1">{actionData.errors.phone}</p>
+                )}
               </div>
 
               <div>
-                <label
-                  htmlFor="helpType"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="home-contact-help" className="block text-sm font-medium mb-2">
                   How Can I Help?
                 </label>
                 <select
-                  id="helpType"
+                  id="home-contact-help"
                   name="helpType"
-                  value={formData.helpType}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-md text-gray-900 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
                 >
                   <option value="">Select...</option>
@@ -202,31 +180,33 @@ export function ContactSection() {
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="home-contact-message" className="block text-sm font-medium mb-2">
                   Message *
                 </label>
                 <textarea
-                  id="message"
+                  id="home-contact-message"
                   name="message"
                   required
                   rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-md text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
+                  className={`w-full px-4 py-3 rounded-md text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary ${
+                    actionData?.errors?.message ? 'border-2 border-red-400' : ''
+                  }`}
                   placeholder="Tell me about your real estate goals..."
+                  aria-invalid={actionData?.errors?.message ? 'true' : 'false'}
                 />
+                {actionData?.errors?.message && (
+                  <p className="text-sm text-red-200 mt-1">{actionData.errors.message}</p>
+                )}
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-white text-primary-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors"
+                disabled={isSubmitting}
+                className="w-full bg-white text-primary-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors disabled:opacity-70"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
-            </form>
+            </fetcher.Form>
           </div>
         </div>
       </div>

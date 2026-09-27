@@ -1,4 +1,4 @@
-import { Form, data, useActionData } from 'react-router'
+import { Form, useActionData } from 'react-router'
 import { useFormStatus } from 'react-dom'
 import { Button } from '~/components/ui/button'
 import {
@@ -14,11 +14,7 @@ import { Badge } from '~/components/ui/badge'
 import { config } from '~/lib/config'
 import { RealScoutListingsWidget } from '~/components/RealScoutListingsWidget'
 import { RealScoutAdvancedSearch } from '~/components/RealScoutAdvancedSearch'
-import {
-  buildFollowUpBossEventPayload,
-  hasRequiredLeadFields,
-  sendFollowUpBossEvent,
-} from '~/lib/follow-up-boss'
+import { CONTACT_PAGE_LEAD, processSiteLeadRequest } from '~/lib/site-lead'
 import {
   Phone,
   Mail,
@@ -67,171 +63,8 @@ export function meta() {
   ]
 }
 
-const CONTACT_FORM_NAME = 'Contact Form'
-const CONTACT_SERVER_ERROR_MESSAGE = `Sorry, something went wrong sending your message. Please call or text Dr. Jan Duffy at ${config.contact.phone}.`
-
-function resolveSourceUrl(
-  request: Request,
-  explicit?: string | null
-): string {
-  const trimmed = explicit?.trim()
-  if (trimmed) {
-    return trimmed
-  }
-  const referer = request.headers.get('Referer')
-  if (referer) {
-    return referer
-  }
-  return `${config.seo.siteUrl}/contact`
-}
-
 export async function action({ request }: Route.ActionArgs) {
-  const contentType = request.headers.get('content-type') ?? ''
-
-  if (contentType.includes('application/json')) {
-    let body: Record<string, unknown> = {}
-    try {
-      const raw = await request.text()
-      if (raw.trim()) {
-        body = JSON.parse(raw) as Record<string, unknown>
-      }
-    } catch {
-      return data({ error: 'Invalid JSON body' }, { status: 400 })
-    }
-
-    if (
-      !hasRequiredLeadFields({
-        name: String(body.name ?? ''),
-        email: String(body.email ?? ''),
-        phone: String(body.phone ?? ''),
-      })
-    ) {
-      return data(
-        {
-          error: 'Validation failed',
-          message: 'Name and a valid email or phone are required',
-        },
-        { status: 400 }
-      )
-    }
-
-    const fubPayload = buildFollowUpBossEventPayload({
-      name: String(body.name ?? ''),
-      email: String(body.email ?? ''),
-      phone: String(body.phone ?? ''),
-      message: String(body.message ?? 'Website inquiry'),
-      service: String(body.service ?? ''),
-      timeline: String(body.timeline ?? ''),
-      budget: String(body.budget ?? ''),
-      formName: CONTACT_FORM_NAME,
-      pageDescription: 'Contact Page Form',
-      sourceUrl: resolveSourceUrl(
-        request,
-        body.sourceUrl ? String(body.sourceUrl) : undefined
-      ),
-    })
-
-    const fubResult = await sendFollowUpBossEvent(fubPayload)
-    if (fubResult.reason === 'missing_key') {
-      return data({ error: 'Lead capture is temporarily unavailable' }, { status: 503 })
-    }
-    if (!fubResult.ok) {
-      return data({ error: 'Failed to submit lead' }, { status: 502 })
-    }
-
-    return data({ success: true })
-  }
-
-  const formData = await request.formData()
-
-  const name = formData.get('name')
-  const email = formData.get('email')
-  const phone = formData.get('phone')
-  const message = formData.get('message')
-  const service = formData.get('service')
-  const timeline = formData.get('timeline')
-  const budget = formData.get('budget')
-  const sourceUrlField = formData.get('sourceUrl')
-
-  const errors: Record<string, string> = {}
-
-  if (!name || String(name).trim().length < 2) {
-    errors.name = 'Please enter your full name'
-  }
-
-  const emailStr = email ? String(email).trim() : ''
-  const phoneStr = phone ? String(phone).trim() : ''
-
-  if (!emailStr && !phoneStr) {
-    errors.email = 'Please enter an email address or phone number'
-  } else if (emailStr && !emailStr.includes('@')) {
-    errors.email = 'Please enter a valid email address'
-  }
-
-  if (phoneStr) {
-    const phoneRegex = /^[\d\s\-\(\)]+$/
-    if (!phoneRegex.test(phoneStr)) {
-      errors.phone = 'Please enter a valid phone number'
-    }
-  }
-
-  if (!message || String(message).trim().length < 10) {
-    errors.message = 'Please provide a message with at least 10 characters'
-  }
-
-  if (Object.keys(errors).length > 0) {
-    return {
-      success: false,
-      message: 'Please correct the errors below',
-      errors,
-    }
-  }
-
-  const fubPayload = buildFollowUpBossEventPayload({
-    name: String(name),
-    email: emailStr,
-    phone: phoneStr,
-    message: String(message),
-    service: service ? String(service) : '',
-    timeline: timeline ? String(timeline) : '',
-    budget: budget ? String(budget) : '',
-    formName: CONTACT_FORM_NAME,
-    pageDescription: 'Contact Page Form',
-    sourceUrl: resolveSourceUrl(
-      request,
-      sourceUrlField ? String(sourceUrlField) : undefined
-    ),
-  })
-
-  const fubResult = await sendFollowUpBossEvent(fubPayload)
-
-  if (fubResult.reason === 'missing_key') {
-    return data(
-      {
-        success: false,
-        serverError: true,
-        message: CONTACT_SERVER_ERROR_MESSAGE,
-      },
-      { status: 503 }
-    )
-  }
-
-  if (!fubResult.ok) {
-    return data(
-      {
-        success: false,
-        serverError: true,
-        message: CONTACT_SERVER_ERROR_MESSAGE,
-      },
-      { status: 502 }
-    )
-  }
-
-  return {
-    success: true,
-    message:
-      "Thank you for your message! I'll get back to you within 24 hours.",
-  }
+  return processSiteLeadRequest(request, CONTACT_PAGE_LEAD)
 }
 
 /**

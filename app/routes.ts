@@ -100,6 +100,7 @@ export default [
   route('sitemap-communities.xml', 'routes/api/sitemap-communities.tsx'),
   route('sitemap-properties.xml', 'routes/api/sitemap-properties.tsx'),
   route('sitemap-images.xml', 'routes/api/sitemap-images.tsx'),
+  route('api/lead', 'routes/api/lead.tsx'),
 
   // About section (outside layout)
   ...prefix('about', [

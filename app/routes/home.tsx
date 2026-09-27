@@ -16,6 +16,7 @@ import { Badge } from '~/components/ui/badge'
 import { RealScoutListingsWidget } from '~/components/RealScoutListingsWidget'
 import { createProvenanceContext, logger } from '~/lib/logging'
 import { RealScoutAdvancedSearch } from '~/components/RealScoutAdvancedSearch'
+import { ContactSection } from '~/components/ContactSection'
 import {
   Home as HomeIcon,
   MapPin,
@@ -1045,6 +1046,8 @@ export default function Home() {
         </div>
       </section>
 
+      <ContactSection />
+
       {/* Contact CTA */}
       <section className="py-16 bg-primary-700 text-white final-cta-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -1087,13 +1090,10 @@ export default function Home() {
               className="border-2 border-white text-white hover:bg-white hover:text-primary transition-all w-full sm:w-auto"
               asChild
             >
-              <a
-                href={`mailto:${config.contact.email}`}
-                aria-label={`Email ${config.contact.email}`}
-              >
+              <Link to="/contact" aria-label="Go to contact form">
                 <Mail className="w-5 h-5" aria-hidden="true" />
-                Send Email
-              </a>
+                Contact Form
+              </Link>
             </Button>
             <Button
               size="lg"
