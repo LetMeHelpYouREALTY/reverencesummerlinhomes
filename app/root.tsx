@@ -129,24 +129,28 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 {
                   '@type': 'Place',
                   name: 'Reverence Summerlin',
-                  address: {
-                    '@type': 'PostalAddress',
-                    streetAddress: config.agent.office.address,
-                    addressLocality: config.agent.office.city,
-                    addressRegion: config.agent.office.state,
-                    postalCode: config.agent.office.zip,
-                    addressCountry: 'US',
+                  geo: {
+                    '@type': 'GeoCoordinates',
+                    latitude: 36.214617,
+                    longitude: -115.345375,
+                  },
+                },
+                {
+                  '@type': 'Place',
+                  name: 'The Heights at Reverence',
+                  geo: {
+                    '@type': 'GeoCoordinates',
+                    latitude: 36.214617,
+                    longitude: -115.345375,
                   },
                 },
                 {
                   '@type': 'Place',
                   name: 'Monument at Reverence',
-                  address: {
-                    '@type': 'PostalAddress',
-                    addressLocality: 'Las Vegas',
-                    addressRegion: 'NV',
-                    postalCode: '89134',
-                    addressCountry: 'US',
+                  geo: {
+                    '@type': 'GeoCoordinates',
+                    latitude: 36.214617,
+                    longitude: -115.345375,
                   },
                 },
                 {

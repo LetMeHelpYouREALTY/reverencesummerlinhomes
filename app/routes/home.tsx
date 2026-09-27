@@ -35,6 +35,7 @@ import {
   REVERENCE_FAQ_ITEMS,
   reverenceFaqPageSchema,
 } from '~/lib/reverence-faq'
+import { AmenityMapSection } from '~/components/amenity-map/AmenityMapSection'
 
 export function meta() {
   const title = 'Reverence Summerlin Homes | Dr. Jan Duffy'
@@ -1013,6 +1014,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <AmenityMapSection />
 
       <section
         className="py-16 bg-gray-50"

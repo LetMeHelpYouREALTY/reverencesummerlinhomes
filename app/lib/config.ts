@@ -45,6 +45,21 @@ export const config = {
       'Summerlin real estate',
       'Las Vegas luxury homes',
     ],
+    pages: {
+      amenities: {
+        title:
+          'Nearby Amenities in Reverence, Summerlin, Las Vegas | Dr. Jan Duffy',
+        description:
+          'Interactive map and verified guide to dining, golf, parks, healthcare, shopping, and schools near Reverence Summerlin and Monument at Reverence in Summerlin West. Call (702) 930-8222.',
+        keywords: [
+          'Reverence Summerlin amenities',
+          'Monument at Reverence nearby',
+          'Summerlin West shopping',
+          'golf near Reverence Summerlin',
+          'Downtown Summerlin',
+        ].join(', '),
+      },
+    },
   },
   partnerships: {
     summerlin: {
