@@ -2,7 +2,6 @@ import { Outlet } from 'react-router'
 import { Header } from '~/components/Header'
 import { Footer } from '~/components/Footer'
 import { StickyPhoneBar } from '~/components/StickyPhoneBar'
-import { HyperlocalSilverstoneSection } from '~/components/HyperlocalSilverstoneSection'
 import { BreadcrumbJsonLd } from '~/components/BreadcrumbJsonLd'
 
 export default function Layout() {
@@ -13,7 +12,6 @@ export default function Layout() {
       <main className="flex-1">
         <Outlet />
       </main>
-      <HyperlocalSilverstoneSection />
       <Footer />
       <StickyPhoneBar />
     </div>

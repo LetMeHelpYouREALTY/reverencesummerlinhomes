@@ -26,7 +26,6 @@ import {
   Calendar,
   CreditCard,
 } from 'lucide-react'
-import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [
@@ -38,7 +37,36 @@ export function links() {
 }
 
 export function meta() {
-  return silverstonePageMeta('buying-military-veterans')
+  return [
+    {
+      title:
+        'Military Veterans Home Buying in Reverence Summerlin | VA Loans | Dr. Jan Duffy',
+    },
+    {
+      name: 'description',
+      content:
+        'Specialized real estate services for military veterans buying homes in Reverence Summerlin. Dr. Jan Duffy understands VA loans, military relocation to Reverence Summerlin, and veteran-friendly communities.',
+    },
+    {
+      name: 'keywords',
+      content:
+        'VA loan Reverence Summerlin, military veterans Reverence Summerlin, veteran home buying Las Vegas, VA loan Las Vegas, military relocation Reverence Summerlin, veteran-friendly Reverence Summerlin',
+    },
+    {
+      property: 'og:title',
+      content:
+        'Military Veterans Home Buying in Reverence Summerlin | VA Loans',
+    },
+    {
+      property: 'og:description',
+      content:
+        'Specialized real estate services for military veterans buying homes in Reverence Summerlin. Dr. Jan Duffy understands VA loans and military relocation to Reverence Summerlin.',
+    },
+    {
+      property: 'og:url',
+      content: `${config.seo.siteUrl}/buying/military-veterans`,
+    },
+  ]
 }
 
 export default function MilitaryVeterans() {

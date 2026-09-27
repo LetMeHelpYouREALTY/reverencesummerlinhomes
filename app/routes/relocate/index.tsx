@@ -26,10 +26,32 @@ import {
   Users,
   Award,
 } from 'lucide-react'
-import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return silverstonePageMeta('relocate')
+  return [
+    {
+      title:
+        'Relocate to Las Vegas | Expert Relocation Services | Dr. Jan Duffy',
+    },
+    {
+      name: 'description',
+      content:
+        'Expert relocation services to Las Vegas and Summerlin. Dr. Jan Duffy helps families and professionals relocate to Nevada with personalized assistance and market insights.',
+    },
+    {
+      name: 'keywords',
+      content:
+        'relocate to Las Vegas, Las Vegas relocation, Summerlin relocation, Nevada relocation, Dr. Jan Duffy, California to Las Vegas, New York to Las Vegas',
+    },
+    { property: 'og:title', content: 'Relocate to Las Vegas | Dr. Jan Duffy' },
+    {
+      property: 'og:description',
+      content:
+        'Expert relocation services to Las Vegas and Summerlin. Dr. Jan Duffy helps families and professionals relocate to Nevada with personalized assistance.',
+    },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${config.seo.siteUrl}/relocate` },
+  ]
 }
 
 const relocationData = [

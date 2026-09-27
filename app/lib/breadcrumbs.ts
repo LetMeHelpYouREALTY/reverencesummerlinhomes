@@ -41,7 +41,6 @@ const SEGMENT_LABELS: Record<string, string> = {
   'monument-at-reverence': 'Monument at Reverence',
   kestrel: 'Kestrel',
   'skye-canyon': 'Skye Canyon',
-  'silverstone-ranch': 'Silverstone Ranch',
   henderson: 'Henderson',
   'boulder-city': 'Boulder City',
   blog: 'Blog',

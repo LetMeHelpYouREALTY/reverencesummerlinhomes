@@ -1,8 +1,14 @@
 import type { Route } from './+types/resources'
-import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return silverstonePageMeta('resources-schools')
+  return [
+    { title: 'Las Vegas Schools | Dr. Jan Duffy' },
+    {
+      name: 'description',
+      content:
+        'Las Vegas schools guide. Dr. Jan Duffy helps you find the best schools in Las Vegas and Summerlin.',
+    },
+  ]
 }
 
 export default function Schools() {

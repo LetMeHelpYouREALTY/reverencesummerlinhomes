@@ -28,7 +28,6 @@ export async function loader({ request }: Route.LoaderArgs) {
       'reverence-summerlin',
       'kestrel',
       'skye-canyon',
-      'silverstone-ranch',
       'henderson',
       'boulder-city',
       'ascension-summerlin',
@@ -42,11 +41,10 @@ export async function loader({ request }: Route.LoaderArgs) {
       .map(community => ({
         url: `/communities/${community.id}`,
         priority:
-          community.id === 'silverstone-ranch'
-            ? '1.0'
-            : community.id === 'monument-at-reverence'
-              ? '0.9'
-              : '0.8',
+          community.id === 'monument-at-reverence' ||
+          community.id === 'reverence-summerlin'
+            ? '0.9'
+            : '0.8',
         changefreq: 'weekly',
         images: [
           {

@@ -30,14 +30,29 @@ import {
   Calendar,
   ArrowRight,
 } from 'lucide-react'
-import { silverstonePageMeta } from '~/lib/silverstone-seo'
 import {
   REVERENCE_FAQ_ITEMS,
   reverenceFaqPageSchema,
 } from '~/lib/reverence-faq'
 
 export function meta() {
-  return silverstonePageMeta('home')
+  const title = 'Reverence Summerlin Homes | Dr. Jan Duffy'
+  const description = config.seo.description
+  const keywords = config.seo.keywords.join(', ')
+  const url = `${config.seo.siteUrl}/`
+
+  return [
+    { title },
+    { name: 'description', content: description },
+    { name: 'keywords', content: keywords },
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: url },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:description', content: description },
+  ]
 }
 
 export const links: LinksFunction = () => [

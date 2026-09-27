@@ -1,8 +1,14 @@
 import type { Route } from './+types/communities'
-import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return silverstonePageMeta('communities-ascension-summerlin')
+  return [
+    { title: 'Ascension Summerlin | Dr. Jan Duffy' },
+    {
+      name: 'description',
+      content:
+        'Ascension Summerlin homes for sale. Dr. Jan Duffy helps you find luxury homes in this premier Summerlin community.',
+    },
+  ]
 }
 
 export default function AscensionSummerlin() {

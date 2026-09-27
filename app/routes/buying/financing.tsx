@@ -1,13 +1,31 @@
 import type { Route } from './+types/buying-financing'
 import { config } from '~/lib/config'
-import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/buying/financing` }]
 }
 
 export function meta() {
-  return silverstonePageMeta('buying-financing')
+  return [
+    { title: 'Home Financing Options | Dr. Jan Duffy' },
+    {
+      name: 'description',
+      content:
+        'Explore home financing options in Las Vegas. Dr. Jan Duffy connects you with trusted lenders and helps you understand conventional, VA, FHA, and jumbo loan options.',
+    },
+    {
+      name: 'keywords',
+      content:
+        'home financing Las Vegas, mortgage options, home loans Las Vegas, mortgage broker Las Vegas',
+    },
+    { property: 'og:title', content: 'Home Financing Options | Dr. Jan Duffy' },
+    {
+      property: 'og:description',
+      content:
+        'Explore home financing options in Las Vegas. Dr. Jan Duffy connects you with trusted lenders and helps you understand conventional, VA, FHA, and jumbo loan options.',
+    },
+    { property: 'og:url', content: `${config.seo.siteUrl}/buying/financing` },
+  ]
 }
 
 export default function Financing() {

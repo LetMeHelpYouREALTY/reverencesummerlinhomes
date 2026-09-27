@@ -2,7 +2,6 @@ import type { Route } from './+types/relocate'
 import { config } from '~/lib/config'
 import { RealScoutAdvancedSearch } from '~/components/RealScoutAdvancedSearch'
 import { Card, CardContent } from '~/components/ui/card'
-import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [
@@ -11,7 +10,15 @@ export function links() {
 }
 
 export function meta() {
-  return silverstonePageMeta('relocate-summerlin')
+  return [
+    { title: 'Relocate to Summerlin | Dr. Jan Duffy' },
+    {
+      name: 'description',
+      content:
+        "Relocating to Summerlin? Dr. Jan Duffy helps families find the perfect home in Summerlin, Las Vegas's premier community.",
+    },
+    { property: 'og:url', content: `${config.seo.siteUrl}/relocate/summerlin` },
+  ]
 }
 
 export default function RelocateSummerlin() {

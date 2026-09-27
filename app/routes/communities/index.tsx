@@ -1,8 +1,14 @@
 import type { Route } from './+types/communities'
-import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return silverstonePageMeta('communities')
+  return [
+    { title: 'Las Vegas Communities | Dr. Jan Duffy' },
+    {
+      name: 'description',
+      content:
+        "Explore Las Vegas's premier communities with Dr. Jan Duffy. From Summerlin to Henderson, find your perfect neighborhood.",
+    },
+  ]
 }
 
 export default function CommunitiesIndex() {

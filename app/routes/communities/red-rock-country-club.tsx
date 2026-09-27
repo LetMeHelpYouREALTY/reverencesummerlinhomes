@@ -29,10 +29,44 @@ import {
   Circle,
   TreePine,
 } from 'lucide-react'
-import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function meta() {
-  return silverstonePageMeta('communities-red-rock-country-club')
+  return [
+    {
+      title:
+        'Red Rock Country Club Homes | Golf Course Living in Las Vegas | Dr. Jan Duffy',
+    },
+    {
+      name: 'description',
+      content:
+        'Discover luxury golf course homes in Red Rock Country Club, Las Vegas. Dr. Jan Duffy specializes in Red Rock Country Club real estate with championship golf, mountain views, and resort amenities.',
+    },
+    {
+      name: 'keywords',
+      content:
+        'Red Rock Country Club homes, golf course homes Las Vegas, championship golf, mountain views, Dr. Jan Duffy',
+    },
+    {
+      property: 'og:title',
+      content: 'Red Rock Country Club Homes | Golf Course Living in Las Vegas',
+    },
+    {
+      property: 'og:description',
+      content:
+        'Luxury golf course homes in Red Rock Country Club with championship golf, mountain views, and resort amenities. Expert real estate guidance from Dr. Jan Duffy.',
+    },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    {
+      name: 'twitter:title',
+      content: 'Red Rock Country Club Homes | Dr. Jan Duffy',
+    },
+    {
+      name: 'twitter:description',
+      content:
+        'Luxury golf course homes in Red Rock Country Club with championship golf and mountain views.',
+    },
+  ]
 }
 
 export default function RedRockCountryClub() {

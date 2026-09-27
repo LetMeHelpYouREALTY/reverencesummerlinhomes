@@ -174,15 +174,9 @@ export function Header() {
                     <div className="flex items-center gap-2 mb-2">
                       <Star className="w-4 h-4 text-primary-600" />
                       <span className="text-sm font-semibold text-primary-600">
-                        Featured Communities
+                        Featured Community
                       </span>
                     </div>
-                    <Link
-                      to="/communities/silverstone-ranch"
-                      className="block px-2 py-1 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 font-medium"
-                    >
-                      Silverstone Ranch
-                    </Link>
                     <Link
                       to="/communities/monument-at-reverence"
                       className="block px-2 py-1 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 font-medium"
@@ -394,15 +388,6 @@ export function Header() {
                   Communities
                 </div>
                 <div className="pl-4 space-y-1">
-                  <Link
-                    to="/communities/silverstone-ranch"
-                    className="block px-3 py-2 text-sm text-gray-700 hover:text-primary-600 hover:bg-white rounded-md"
-                  >
-                    <div className="flex items-center gap-2">
-                      <Star className="w-4 h-4 text-primary-600" />
-                      <span>Silverstone Ranch</span>
-                    </div>
-                  </Link>
                   <Link
                     to="/communities/monument-at-reverence"
                     className="block px-3 py-2 text-sm text-gray-700 hover:text-primary-600 hover:bg-white rounded-md"

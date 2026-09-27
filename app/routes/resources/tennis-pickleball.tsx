@@ -1,6 +1,5 @@
 import type { Route } from './+types/resources'
 import { config } from '~/lib/config'
-import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [
@@ -12,7 +11,18 @@ export function links() {
 }
 
 export function meta() {
-  return silverstonePageMeta('resources-tennis-pickleball')
+  return [
+    { title: 'Las Vegas Tennis & Pickleball | Dr. Jan Duffy' },
+    {
+      name: 'description',
+      content:
+        'Las Vegas tennis and pickleball courts. Dr. Jan Duffy helps you find the best courts in Las Vegas.',
+    },
+    {
+      property: 'og:url',
+      content: `${config.seo.siteUrl}/resources/tennis-pickleball`,
+    },
+  ]
 }
 
 export default function TennisPickleball() {

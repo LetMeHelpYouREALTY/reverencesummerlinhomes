@@ -1,13 +1,20 @@
 import type { Route } from './+types/about'
 import { config } from '~/lib/config'
-import { silverstonePageMeta } from '~/lib/silverstone-seo'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/about/media` }]
 }
 
 export function meta() {
-  return silverstonePageMeta('about-media')
+  return [
+    { title: 'Dr. Jan Duffy Media | Las Vegas Real Estate Expert' },
+    {
+      name: 'description',
+      content:
+        'Dr. Jan Duffy media appearances and press coverage. Las Vegas real estate expert in the news.',
+    },
+    { property: 'og:url', content: `${config.seo.siteUrl}/about/media` },
+  ]
 }
 
 export default function Media() {
