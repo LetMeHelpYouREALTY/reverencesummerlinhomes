@@ -31,6 +31,10 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import { silverstonePageMeta } from '~/lib/silverstone-seo'
+import {
+  REVERENCE_FAQ_ITEMS,
+  reverenceFaqPageSchema,
+} from '~/lib/reverence-faq'
 
 export function meta() {
   return silverstonePageMeta('home')
@@ -990,6 +994,38 @@ export default function Home() {
                 </Button>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="py-16 bg-gray-50"
+        aria-labelledby="reverence-faq-heading"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(reverenceFaqPageSchema()),
+            }}
+          />
+          <h2
+            id="reverence-faq-heading"
+            className="text-3xl font-bold text-gray-900 mb-8 text-center"
+          >
+            Reverence Summerlin FAQs
+          </h2>
+          <div className="space-y-6">
+            {REVERENCE_FAQ_ITEMS.map(item => (
+              <Card key={item.question}>
+                <CardHeader>
+                  <CardTitle className="text-lg">{item.question}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">{item.answer}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

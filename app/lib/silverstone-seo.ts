@@ -91,13 +91,15 @@ type PageSeo = {
 
 const PAGE_SEO: Record<SilverstonePageKey, PageSeo> = {
   home: {
-    title: `Silverstone Ranch Real Estate | Guard-Gated Homes 89131 | ${SILVERSTONE.agent}`,
-    description: `Buy or sell in Silverstone Ranch, Centennial Hills' guard-gated Pulte community (ZIP 89131). Median $685K, 13 days on market. Expert realtor services from ${SILVERSTONE.agent}. Call ${SILVERSTONE.phone}.`,
+    title: 'Reverence Summerlin Homes | Dr. Jan Duffy',
+    description:
+      'Reverence Summerlin and Monument at Reverence real estate with Dr. Jan Duffy, Pulte specialist. Buying, selling, and tours in Summerlin West. Call (702) 930-8222.',
     path: '/',
   },
   layout: {
-    title: `Silverstone Ranch Realtor | ${SILVERSTONE.agent} | Las Vegas 89131`,
-    description: `Hyperlocal realtor services for Silverstone Ranch and Northwest Las Vegas. Guard-gated homes, expert buyer & seller representation by ${SILVERSTONE.agent}.`,
+    title: 'Reverence Summerlin Homes | Dr. Jan Duffy',
+    description:
+      'Reverence Summerlin and Monument at Reverence real estate with Dr. Jan Duffy, Pulte specialist. Buying, selling, and tours in Summerlin West. Call (702) 930-8222.',
     path: '/',
   },
   buying: {

@@ -3,15 +3,12 @@ import { Header } from '~/components/Header'
 import { Footer } from '~/components/Footer'
 import { StickyPhoneBar } from '~/components/StickyPhoneBar'
 import { HyperlocalSilverstoneSection } from '~/components/HyperlocalSilverstoneSection'
-import { silverstonePageMeta } from '~/lib/silverstone-seo'
-
-export function meta() {
-  return silverstonePageMeta('layout')
-}
+import { BreadcrumbJsonLd } from '~/components/BreadcrumbJsonLd'
 
 export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col">
+      <BreadcrumbJsonLd />
       <Header />
       <main className="flex-1">
         <Outlet />

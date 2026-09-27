@@ -1,8 +1,7 @@
 import type { Route } from './+types/sitemap'
 import { config } from '~/lib/config'
-import { communitiesData } from '~/lib/data'
 
-export async function loader({ request }: Route.LoaderArgs) {
+export async function loader(_args: Route.LoaderArgs) {
   try {
     // Safety check for config
     if (!config?.seo?.siteUrl) {
@@ -158,21 +157,4 @@ ${allPages
       }
     )
   }
-}
-
-export function ErrorBoundary() {
-  return new Response(
-    '<?xml version="1.0" encoding="UTF-8"?><error>Sitemap unavailable</error>',
-    {
-      status: 500,
-      headers: {
-        'Content-Type': 'application/xml',
-      },
-    }
-  )
-}
-
-// Default export for Vercel serverless function compatibility
-export default function Sitemap() {
-  return null // This route is handled by the loader
 }

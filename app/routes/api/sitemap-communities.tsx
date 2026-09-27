@@ -122,20 +122,3 @@ ${page.images
     )
   }
 }
-
-export function ErrorBoundary() {
-  return new Response(
-    '<?xml version="1.0" encoding="UTF-8"?><error>Sitemap unavailable</error>',
-    {
-      status: 500,
-      headers: {
-        'Content-Type': 'application/xml',
-      },
-    }
-  )
-}
-
-// Default export for Vercel serverless function compatibility
-export default function SitemapCommunities() {
-  return null // This route is handled by the loader
-}

@@ -93,14 +93,14 @@ export default [
     route('properties/:id', 'routes/property-detail.tsx'),
     route('neighborhood-comparison', 'routes/neighborhood-comparison.tsx'),
     route('market-trends', 'routes/market-trends.tsx'),
-
-    // Sitemap routes (root level for Google Search Console)
-    route('sitemap.xml', 'routes/api/sitemap.tsx'),
-    route('sitemap-index.xml', 'routes/api/sitemap-index.tsx'),
-    route('sitemap-communities.xml', 'routes/api/sitemap-communities.tsx'),
-    route('sitemap-properties.xml', 'routes/api/sitemap-properties.tsx'),
-    route('sitemap-images.xml', 'routes/api/sitemap-images.tsx'),
   ]),
+
+  // Sitemap routes (outside layout — must return raw XML, not HTML shell)
+  route('sitemap.xml', 'routes/api/sitemap.tsx'),
+  route('sitemap-index.xml', 'routes/api/sitemap-index.tsx'),
+  route('sitemap-communities.xml', 'routes/api/sitemap-communities.tsx'),
+  route('sitemap-properties.xml', 'routes/api/sitemap-properties.tsx'),
+  route('sitemap-images.xml', 'routes/api/sitemap-images.tsx'),
 
   // About section (outside layout)
   ...prefix('about', [

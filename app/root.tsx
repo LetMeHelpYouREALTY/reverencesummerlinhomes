@@ -128,21 +128,25 @@ export function Layout({ children }: { children: React.ReactNode }) {
               areaServed: [
                 {
                   '@type': 'Place',
-                  name: 'Silverstone Ranch',
+                  name: 'Reverence Summerlin',
                   address: {
                     '@type': 'PostalAddress',
-                    addressLocality: 'Las Vegas',
-                    addressRegion: 'NV',
-                    postalCode: '89131',
+                    streetAddress: config.agent.office.address,
+                    addressLocality: config.agent.office.city,
+                    addressRegion: config.agent.office.state,
+                    postalCode: config.agent.office.zip,
                     addressCountry: 'US',
                   },
                 },
                 {
-                  '@type': 'City',
-                  name: 'Las Vegas',
-                  containedInPlace: {
-                    '@type': 'State',
-                    name: 'Nevada',
+                  '@type': 'Place',
+                  name: 'Monument at Reverence',
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: 'Las Vegas',
+                    addressRegion: 'NV',
+                    postalCode: '89134',
+                    addressCountry: 'US',
                   },
                 },
                 {
@@ -165,11 +169,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 },
               ],
               knowsAbout: [
-                'Silverstone Ranch Real Estate',
-                'Centennial Hills Homes',
-                'Guard-Gated Communities',
+                'Reverence Summerlin Real Estate',
+                'Monument at Reverence',
+                'Pulte Homes Las Vegas',
+                'Summerlin West Real Estate',
                 'Las Vegas Real Estate',
-                'Summerlin Real Estate',
                 'New Construction',
                 'Home Buying',
                 'Home Selling',

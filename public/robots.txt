@@ -2,11 +2,11 @@ User-agent: *
 Allow: /
 
 # Sitemaps for Google Search Console
-Sitemap: https://www.reverencesummerlinhomes.com/sitemap-index.xml
-Sitemap: https://www.reverencesummerlinhomes.com/sitemap.xml
-Sitemap: https://www.reverencesummerlinhomes.com/sitemap-communities.xml
-Sitemap: https://www.reverencesummerlinhomes.com/sitemap-properties.xml
-Sitemap: https://www.reverencesummerlinhomes.com/sitemap-images.xml
+Sitemap: https://reverencesummerlinhomes.com/sitemap-index.xml
+Sitemap: https://reverencesummerlinhomes.com/sitemap.xml
+Sitemap: https://reverencesummerlinhomes.com/sitemap-communities.xml
+Sitemap: https://reverencesummerlinhomes.com/sitemap-properties.xml
+Sitemap: https://reverencesummerlinhomes.com/sitemap-images.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
