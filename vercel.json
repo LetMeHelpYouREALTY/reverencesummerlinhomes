@@ -54,6 +54,11 @@
       "source": "/home",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/nearby-amenities",
+      "destination": "/amenities",
+      "permanent": true
     }
   ]
 }

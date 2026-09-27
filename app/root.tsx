@@ -128,6 +128,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
               areaServed: [
                 {
                   '@type': 'Place',
+                  name: 'Reverence Summerlin',
+                  geo: {
+                    '@type': 'GeoCoordinates',
+                    latitude: 36.214617,
+                    longitude: -115.345375,
+                  },
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: config.agent.office.address,
+                    addressLocality: config.agent.office.city,
+                    addressRegion: config.agent.office.state,
+                    postalCode: config.agent.office.zip,
+                    addressCountry: 'US',
+                  },
+                },
+                {
+                  '@type': 'Place',
                   name: 'Silverstone Ranch',
                   address: {
                     '@type': 'PostalAddress',
@@ -165,7 +182,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 },
               ],
               knowsAbout: [
-                'Silverstone Ranch Real Estate',
+                'Monument at Reverence Real Estate',
+                'Reverence Summerlin Amenities',
                 'Centennial Hills Homes',
                 'Guard-Gated Communities',
                 'Las Vegas Real Estate',

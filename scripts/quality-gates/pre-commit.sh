@@ -26,19 +26,19 @@ FAILED=0
 echo -e "${YELLOW}📝 Checking code formatting...${NC}"
 if "$SCRIPT_DIR/format-check.sh" > /dev/null 2>&1; then
   echo -e "${GREEN}✅ Format check passed${NC}"
-  ((PASSED++))
+  PASSED=$((PASSED + 1))
 else
   echo -e "${YELLOW}⚠️  Format check: Some files need formatting (run 'npm run format')${NC}"
-  ((FAILED++))
+  FAILED=$((FAILED + 1))
 fi
 echo ""
 
 # Run lint check (blocking)
 echo -e "${YELLOW}🔍 Running lint check...${NC}"
 if "$SCRIPT_DIR/lint-check.sh"; then
-  ((PASSED++))
+  PASSED=$((PASSED + 1))
 else
-  ((FAILED++))
+  FAILED=$((FAILED + 1))
   echo ""
   echo -e "${RED}❌ Pre-commit failed: Lint check failed${NC}"
   exit 1
@@ -48,9 +48,9 @@ echo ""
 # Run type check (blocking)
 echo -e "${YELLOW}🔍 Running type check...${NC}"
 if "$SCRIPT_DIR/typecheck.sh"; then
-  ((PASSED++))
+  PASSED=$((PASSED + 1))
 else
-  ((FAILED++))
+  FAILED=$((FAILED + 1))
   echo ""
   echo -e "${RED}❌ Pre-commit failed: Type check failed${NC}"
   exit 1
