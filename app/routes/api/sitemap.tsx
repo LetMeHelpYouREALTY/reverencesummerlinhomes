@@ -24,6 +24,7 @@ export async function loader({ request }: Route.LoaderArgs) {
       { url: '/contact', priority: '0.8', changefreq: 'monthly' },
       { url: '/valuation', priority: '0.8', changefreq: 'weekly' },
       { url: '/properties', priority: '0.9', changefreq: 'daily' },
+      { url: '/amenities', priority: '0.85', changefreq: 'monthly' },
     ]
 
     // Buying pages with enhanced SEO priorities

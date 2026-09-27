@@ -33,6 +33,7 @@ import {
 import type { Route } from './+types/properties'
 import { config } from '~/lib/config'
 import { silverstonePageMeta } from '~/lib/silverstone-seo'
+import { AmenityMapSection } from '~/components/amenity-map/AmenityMapSection'
 
 export function links() {
   return [{ rel: 'canonical', href: `${config.seo.siteUrl}/properties` }]
@@ -537,6 +538,12 @@ export default function Properties() {
             </CardContent>
           </Card>
         )}
+
+        <AmenityMapSection
+          heading="What's Near Reverence Summerlin Listings"
+          subheading="Before you tour, explore restaurants, parks, golf, healthcare, and shopping around guard-gated Reverence and Monument at Reverence."
+          className="py-12"
+        />
 
         {/* Contact CTA */}
         <Card className="bg-gradient-to-r from-primary-600 to-primary-700 text-white">

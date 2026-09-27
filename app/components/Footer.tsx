@@ -93,6 +93,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  to="/amenities"
+                  className="text-white/95 hover:text-gold-light transition-colors"
+                >
+                  Nearby Amenities
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/valuation"
                   className="text-white/95 hover:text-gold-light transition-colors"
                 >

@@ -76,6 +76,7 @@ export type SilverstonePageKey =
   | 'properties'
   | 'neighborhood-comparison'
   | 'market-trends'
+  | 'amenities'
   | 'about'
   | 'about-media'
   | 'about-reviews'
@@ -352,6 +353,16 @@ const PAGE_SEO: Record<SilverstonePageKey, PageSeo> = {
     title: `Silverstone Ranch Market Trends | 89131 Real Estate | ${SILVERSTONE.agent}`,
     description: `Silverstone Ranch market data: median $685K (+5.2% YoY), 13 days on market, 101.8% list-to-sale. ${SILVERSTONE.agent} market analyst.`,
     path: '/market-trends',
+  },
+  amenities: {
+    title: `Nearby Amenities in Reverence Summerlin, Las Vegas | ${SILVERSTONE.agent}`,
+    description: `Interactive map and hyperlocal guide to dining, golf, parks, healthcare, shopping, and schools near guard-gated Reverence Summerlin and Monument at Reverence. ${SILVERSTONE.agent} — ${SILVERSTONE.phone}.`,
+    path: '/amenities',
+    extraKeywords: [
+      'Reverence Summerlin amenities',
+      'Monument at Reverence nearby',
+      'Summerlin West restaurants',
+    ],
   },
   about: {
     title: `About ${SILVERSTONE.agent} | Silverstone Ranch Realtor`,

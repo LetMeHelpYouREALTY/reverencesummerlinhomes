@@ -93,6 +93,7 @@ export default [
     route('properties/:id', 'routes/property-detail.tsx'),
     route('neighborhood-comparison', 'routes/neighborhood-comparison.tsx'),
     route('market-trends', 'routes/market-trends.tsx'),
+    route('amenities', 'routes/amenities.tsx'),
 
     // Sitemap routes (root level for Google Search Console)
     route('sitemap.xml', 'routes/api/sitemap.tsx'),

@@ -1,8 +1,8 @@
-import type { Route } from './+types/relocate'
 import { config } from '~/lib/config'
 import { RealScoutAdvancedSearch } from '~/components/RealScoutAdvancedSearch'
 import { Card, CardContent } from '~/components/ui/card'
 import { silverstonePageMeta } from '~/lib/silverstone-seo'
+import { AmenityMapSection } from '~/components/amenity-map/AmenityMapSection'
 
 export function links() {
   return [
@@ -62,6 +62,11 @@ export default function RelocateSummerlin() {
           </p>
         </div>
       </div>
+
+      <AmenityMapSection
+        heading="Relocating to Reverence Summerlin?"
+        subheading="Preview restaurants, parks, golf, healthcare, and shopping near guard-gated Reverence before you visit Las Vegas."
+      />
     </div>
   )
 }

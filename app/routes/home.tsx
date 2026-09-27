@@ -31,6 +31,7 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import { silverstonePageMeta } from '~/lib/silverstone-seo'
+import { AmenityMapSection } from '~/components/amenity-map/AmenityMapSection'
 
 export function meta() {
   return silverstonePageMeta('home')
@@ -993,6 +994,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <AmenityMapSection />
 
       {/* Contact CTA */}
       <section className="py-16 bg-primary-700 text-white final-cta-section">

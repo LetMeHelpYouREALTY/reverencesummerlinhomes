@@ -28,6 +28,7 @@ import {
   Car,
 } from 'lucide-react'
 import { silverstonePageMeta } from '~/lib/silverstone-seo'
+import { AmenityMapSection } from '~/components/amenity-map/AmenityMapSection'
 
 export function meta() {
   return silverstonePageMeta('communities-monument-at-reverence')
@@ -523,6 +524,11 @@ export default function MonumentAtReverence() {
           />
         </div>
       </section>
+
+      <AmenityMapSection
+        heading="What's Near Monument at Reverence"
+        subheading="Filter restaurants, grocery, parks, golf, healthcare, and schools around guard-gated Reverence Summerlin — minutes from Downtown Summerlin and Red Rock Canyon."
+      />
     </div>
   )
 }
