@@ -1,4 +1,4 @@
-import { Form, useActionData } from 'react-router'
+import { Form, data, useActionData } from 'react-router'
 import { useFormStatus } from 'react-dom'
 import { Button } from '~/components/ui/button'
 import {
@@ -14,7 +14,11 @@ import { Badge } from '~/components/ui/badge'
 import { config } from '~/lib/config'
 import { RealScoutListingsWidget } from '~/components/RealScoutListingsWidget'
 import { RealScoutAdvancedSearch } from '~/components/RealScoutAdvancedSearch'
-import { trackAIFeature, type AIFeatureType } from '~/lib/logging'
+import {
+  buildFollowUpBossEventPayload,
+  hasRequiredLeadFields,
+  sendFollowUpBossEvent,
+} from '~/lib/follow-up-boss'
 import {
   Phone,
   Mail,
@@ -63,30 +67,110 @@ export function meta() {
   ]
 }
 
+const CONTACT_FORM_NAME = 'Contact Form'
+const CONTACT_SERVER_ERROR_MESSAGE = `Sorry, something went wrong sending your message. Please call or text Dr. Jan Duffy at ${config.contact.phone}.`
+
+function resolveSourceUrl(
+  request: Request,
+  explicit?: string | null
+): string {
+  const trimmed = explicit?.trim()
+  if (trimmed) {
+    return trimmed
+  }
+  const referer = request.headers.get('Referer')
+  if (referer) {
+    return referer
+  }
+  return `${config.seo.siteUrl}/contact`
+}
+
 export async function action({ request }: Route.ActionArgs) {
+  const contentType = request.headers.get('content-type') ?? ''
+
+  if (contentType.includes('application/json')) {
+    let body: Record<string, unknown> = {}
+    try {
+      const raw = await request.text()
+      if (raw.trim()) {
+        body = JSON.parse(raw) as Record<string, unknown>
+      }
+    } catch {
+      return data({ error: 'Invalid JSON body' }, { status: 400 })
+    }
+
+    if (
+      !hasRequiredLeadFields({
+        name: String(body.name ?? ''),
+        email: String(body.email ?? ''),
+        phone: String(body.phone ?? ''),
+      })
+    ) {
+      return data(
+        {
+          error: 'Validation failed',
+          message: 'Name and a valid email or phone are required',
+        },
+        { status: 400 }
+      )
+    }
+
+    const fubPayload = buildFollowUpBossEventPayload({
+      name: String(body.name ?? ''),
+      email: String(body.email ?? ''),
+      phone: String(body.phone ?? ''),
+      message: String(body.message ?? 'Website inquiry'),
+      service: String(body.service ?? ''),
+      timeline: String(body.timeline ?? ''),
+      budget: String(body.budget ?? ''),
+      formName: CONTACT_FORM_NAME,
+      pageDescription: 'Contact Page Form',
+      sourceUrl: resolveSourceUrl(
+        request,
+        body.sourceUrl ? String(body.sourceUrl) : undefined
+      ),
+    })
+
+    const fubResult = await sendFollowUpBossEvent(fubPayload)
+    if (fubResult.reason === 'missing_key') {
+      return data({ error: 'Lead capture is temporarily unavailable' }, { status: 503 })
+    }
+    if (!fubResult.ok) {
+      return data({ error: 'Failed to submit lead' }, { status: 502 })
+    }
+
+    return data({ success: true })
+  }
+
   const formData = await request.formData()
 
-  // Extract form data (sanitized for logging)
   const name = formData.get('name')
   const email = formData.get('email')
   const phone = formData.get('phone')
   const message = formData.get('message')
   const service = formData.get('service')
+  const timeline = formData.get('timeline')
+  const budget = formData.get('budget')
+  const sourceUrlField = formData.get('sourceUrl')
 
-  // Enhanced validation with React Router 7.12 improvements
   const errors: Record<string, string> = {}
 
   if (!name || String(name).trim().length < 2) {
     errors.name = 'Please enter your full name'
   }
 
-  if (!email || !String(email).includes('@')) {
+  const emailStr = email ? String(email).trim() : ''
+  const phoneStr = phone ? String(phone).trim() : ''
+
+  if (!emailStr && !phoneStr) {
+    errors.email = 'Please enter an email address or phone number'
+  } else if (emailStr && !emailStr.includes('@')) {
     errors.email = 'Please enter a valid email address'
   }
 
-  if (phone && String(phone).length > 0) {
+  if (phoneStr) {
     const phoneRegex = /^[\d\s\-\(\)]+$/
-    if (!phoneRegex.test(String(phone))) {
+    if (!phoneRegex.test(phoneStr)) {
       errors.phone = 'Please enter a valid phone number'
     }
   }
@@ -95,7 +179,6 @@ export async function action({ request }: Route.ActionArgs) {
     errors.message = 'Please provide a message with at least 10 characters'
   }
 
-  // Return validation errors immediately (React Router 7.12 pattern)
   if (Object.keys(errors).length > 0) {
     return {
       success: false,
@@ -104,60 +187,51 @@ export async function action({ request }: Route.ActionArgs) {
     }
   }
 
-  // Track AI-driven form processing with full provenance
-  const result = await trackAIFeature<{
-    success: boolean
-    message: string
-    errors?: Record<string, string>
-  }>(
-    'form_processing' as AIFeatureType,
-    request,
-    async () => {
-      // In a real application, you would:
-      // 1. Validate the form data
-      // 2. Send email notification
-      // 3. Store in CRM system (potentially using AI for lead scoring)
-      // 4. Send confirmation to user
+  const fubPayload = buildFollowUpBossEventPayload({
+    name: String(name),
+    email: emailStr,
+    phone: phoneStr,
+    message: String(message),
+    service: service ? String(service) : '',
+    timeline: timeline ? String(timeline) : '',
+    budget: budget ? String(budget) : '',
+    formName: CONTACT_FORM_NAME,
+    pageDescription: 'Contact Page Form',
+    sourceUrl: resolveSourceUrl(
+      request,
+      sourceUrlField ? String(sourceUrlField) : undefined
+    ),
+  })
 
-      // Simulate processing delay (in real app, this might include AI processing)
-      await new Promise(resolve => setTimeout(resolve, 1000))
+  const fubResult = await sendFollowUpBossEvent(fubPayload)
 
-      // Simulate AI-powered lead scoring or content generation
-      // In production, this might call an AI service for:
-      // - Lead scoring
-      // - Personalized response generation
-      // - Service recommendation
-
-      return {
-        success: true,
-        message:
-          "Thank you for your message! I'll get back to you within 24 hours.",
-      }
-    },
-    {
-      input: {
-        service,
-        hasMessage: !!message,
-        messageLength: message ? String(message).length : 0,
+  if (fubResult.reason === 'missing_key') {
+    return data(
+      {
+        success: false,
+        serverError: true,
+        message: CONTACT_SERVER_ERROR_MESSAGE,
       },
-      metadata: {
-        formType: 'contact',
-        route: '/contact',
-      },
-      // If using AI services with token costs, implement token tracking:
-      // tokenTracker: async (result) => {
-      //   // Calculate tokens used (prompt + completion)
-      //   return {
-      //     prompt: 150,
-      //     completion: 50,
-      //     model: 'gpt-4',
-      //     cost: 0.003, // Estimated cost in USD
-      //   };
-      // },
-    }
-  )
+      { status: 503 }
+    )
+  }
 
-  return result
+  if (!fubResult.ok) {
+    return data(
+      {
+        success: false,
+        serverError: true,
+        message: CONTACT_SERVER_ERROR_MESSAGE,
+      },
+      { status: 502 }
+    )
+  }
+
+  return {
+    success: true,
+    message:
+      "Thank you for your message! I'll get back to you within 24 hours.",
+  }
 }
 
 /**
@@ -413,7 +487,9 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-red-800">
-                        Please correct the following errors:
+                        {actionData.serverError
+                          ? 'Unable to send your message'
+                          : 'Please correct the following errors:'}
                       </h3>
                       <p className="text-red-700">{actionData.message}</p>
                     </div>
