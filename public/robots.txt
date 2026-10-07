@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Sitemaps for Google Search Console
+# Sitemaps (React Router resource routes — app/routes/api/sitemap*.tsx)
 Sitemap: https://reverencesummerlinhomes.com/sitemap-index.xml
 Sitemap: https://reverencesummerlinhomes.com/sitemap.xml
 Sitemap: https://reverencesummerlinhomes.com/sitemap-communities.xml
@@ -24,6 +24,7 @@ Allow: /resources/
 Allow: /about/
 Allow: /contact/
 Allow: /valuation/
+Allow: /amenities/
 Allow: /properties/
 Allow: /sitemap.xml
 Allow: /sitemap-index.xml

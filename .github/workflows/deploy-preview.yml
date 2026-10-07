@@ -24,17 +24,13 @@ jobs:
     - name: Build
       run: npm run build
       
-    - name: Deploy to Vercel Preview
-      uses: amondnet/vercel-action@v25
-      with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-        working-directory: ./
-        vercel-args: '--prod=false'
-        
+    # Vercel Git integration deploys previews on push; redundant CLI deploy
+    # often fails when VERCEL_* secrets are stale ("Project not found").
     - name: Comment PR with Preview URL
       if: github.event_name == 'pull_request'
+      permissions:
+        pull-requests: write
+        issues: write
       uses: actions/github-script@v7
       with:
         script: |
@@ -48,9 +44,9 @@ jobs:
             comment.user.type === 'Bot' && comment.body.includes('Preview deployed')
           );
           
-          const previewUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'Preview URL not available';
+          const previewUrl = 'See the Vercel bot comment on this PR for the preview URL (Git integration deploys on push).';
           
-          const commentBody = `🚀 **Preview deployed successfully!**\n\n🔗 **Preview URL:** ${previewUrl}\n\n📝 **Branch:** \`${context.ref.replace('refs/heads/', '')}\`\n\n✅ **Status:** Ready for review`;
+          const commentBody = `🚀 **Preview build passed**\n\n🔗 **Preview:** ${previewUrl}\n\n📝 **Branch:** \`${context.ref.replace('refs/heads/', '')}\`\n\n✅ **Status:** Vercel Git deploy handles hosting; this job validates \`npm run build\`.`;
           
           if (botComment) {
             await github.rest.issues.updateComment({

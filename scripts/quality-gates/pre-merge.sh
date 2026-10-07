@@ -34,20 +34,20 @@ run_check() {
   echo -e "${BLUE}Running: ${name}...${NC}"
   if bash "$script" > /tmp/quality-check-$$.log 2>&1; then
     echo -e "${GREEN}✅ ${name} passed${NC}"
-    ((PASSED++))
+    PASSED=$((PASSED + 1))
     echo ""
     return 0
   else
     if [ "$blocking" = "true" ]; then
       echo -e "${RED}❌ ${name} failed (BLOCKING)${NC}"
       cat /tmp/quality-check-$$.log
-      ((FAILED++))
+      FAILED=$((FAILED + 1))
       echo ""
       return 1
     else
       echo -e "${YELLOW}⚠️  ${name} failed (NON-BLOCKING)${NC}"
       cat /tmp/quality-check-$$.log
-      ((WARNINGS++))
+      WARNINGS=$((WARNINGS + 1))
       echo ""
       return 0
     fi
