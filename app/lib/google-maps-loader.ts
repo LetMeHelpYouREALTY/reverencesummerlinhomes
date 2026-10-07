@@ -10,9 +10,9 @@ export function loadGoogleMaps(apiKey: string): Promise<void> {
     ;(window as any)[cb] = () => resolve()
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ;(window as any).gm_authFailure = () => {
-        window.dispatchEvent(new Event('gmaps:auth-failure'))
-        reject(new Error('gm_authFailure'))
-      }
+      window.dispatchEvent(new Event('gmaps:auth-failure'))
+      reject(new Error('gm_authFailure'))
+    }
     const s = document.createElement('script')
     s.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(apiKey)}&v=weekly&loading=async&callback=${cb}`
     s.async = true

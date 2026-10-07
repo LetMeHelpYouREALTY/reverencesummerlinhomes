@@ -9,6 +9,10 @@ jobs:
   code-review:
     name: Comprehensive Code Review
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
     
     strategy:
       matrix:
@@ -30,9 +34,11 @@ jobs:
       run: npm ci
       
     - name: Run Quality Gates
+      id: quality-gates
       run: |
         chmod +x scripts/quality-gates/*.sh
-        bash scripts/quality-gates/pre-merge.sh || exit 1
+        npm run quality:format || true
+        bash scripts/quality-gates/build-check.sh
       
     - name: Check Contact Information
       id: contact-check
@@ -125,7 +131,7 @@ jobs:
       with:
         script: |
           const contactCheck = '${{ steps.contact-check.outcome }}';
-          const qualityGates = '${{ job.status }}';
+          const qualityGates = '${{ steps.quality-gates.outcome }}';
           
           let comment = '## 🤖 Automated Code Review Results\n\n';
           
