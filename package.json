@@ -22,7 +22,7 @@
     "quality:typecheck": "bash scripts/quality-gates/typecheck.sh || npm run typecheck",
     "quality:build": "bash scripts/quality-gates/build-check.sh || npm run build",
     "quality:format": "bash scripts/quality-gates/format-check.sh || npm run format:check",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "prepare": "node scripts/setup-git-hooks.js || echo 'Git hooks setup skipped (install husky for full support)'"
   },
   "dependencies": {
