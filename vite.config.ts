@@ -62,6 +62,11 @@ export default defineConfig({
     exclude: ['@react-router/dev'],
   },
 
+  // SSR configuration - ensure @vercel packages are bundled for SSR
+  ssr: {
+    noExternal: ['@vercel/speed-insights'],
+  },
+
   // Performance: Reduce main thread work
   esbuild: {
     legalComments: 'none',
