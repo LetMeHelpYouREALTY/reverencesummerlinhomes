@@ -31,10 +31,10 @@ export const communitiesData = [
     beds: '2-6',
     baths: '2-5',
     description:
-      'Established neighborhood with mature landscaping and mountain views',
-    features: ['Mature trees', 'Mountain views', 'Established community'],
+      'Older neighborhood with mature landscaping and mountain views',
+    features: ['Mature trees', 'Mountain views', 'Older community'],
     amenities: ['Parks', 'Trails', 'Shopping centers', 'Schools'],
-    highlights: ['Established Community', 'Mountain Views'],
+    highlights: ['Older community', 'Mountain Views'],
   },
   {
     id: 'downtown-summerlin',
@@ -78,10 +78,10 @@ export const communitiesData = [
     beds: '3-5',
     baths: '2.5-4.5',
     description:
-      'Family-friendly community with parks and recreational facilities',
-    features: ['Family-oriented', 'Parks', 'Recreation facilities'],
+      'Community with parks and recreational facilities',
+    features: ['Parks', 'Recreation facilities'],
     amenities: ['Community pools', 'Parks', 'Playgrounds', 'Sports courts'],
-    highlights: ['Family-Friendly', 'Recreation Facilities'],
+    highlights: ['Parks', 'Recreation Facilities'],
   },
   {
     id: 'summerlin',
@@ -119,7 +119,7 @@ export const neighborhoodsData = [
     id: 'summerlin-west',
     name: 'Summerlin West',
     description:
-      'Established neighborhood with mature landscaping and convenient amenities',
+      'Older neighborhood with mature landscaping and convenient amenities',
     communities: ['Summerlin West', 'Various subdivisions'],
     highlights: ['Established', 'Mature trees', 'Convenient location'],
   },
@@ -143,9 +143,9 @@ export const neighborhoodsData = [
     id: 'the-trails',
     name: 'The Trails',
     description:
-      'Family-oriented community with parks and recreational facilities',
+      'Community with parks and recreational facilities',
     communities: ['The Trails', 'Family subdivisions'],
-    highlights: ['Family-friendly', 'Parks', 'Recreation'],
+    highlights: ['Parks', 'Recreation'],
   },
 ]
 
@@ -224,7 +224,7 @@ export const relocationData = {
     'Growing job market',
     'Outdoor recreation',
     'Entertainment options',
-    'Quality schools',
+    'Nearby public schools',
     'Modern infrastructure',
     'Business-friendly environment',
   ],

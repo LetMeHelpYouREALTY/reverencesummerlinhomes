@@ -41,7 +41,7 @@ export function meta() {
     {
       name: 'description',
       content:
-        'Discover ultra-luxury homes in Las Vegas. Dr. Jan Duffy specializes in luxury real estate with custom estates, resort amenities, and exclusive communities.',
+        'Discover ultra-luxury homes in Las Vegas. Dr. Jan Duffy specializes in luxury real estate with custom estates, resort amenities, and luxury communities.',
     },
     {
       name: 'keywords',
@@ -55,7 +55,7 @@ export function meta() {
     {
       property: 'og:description',
       content:
-        'Ultra-luxury homes in Las Vegas with custom estates, resort amenities, and exclusive communities. Expert real estate guidance from Dr. Jan Duffy.',
+        'Ultra-luxury homes in Las Vegas with custom estates, resort amenities, and luxury communities. Expert real estate guidance from Dr. Jan Duffy.',
     },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
@@ -88,7 +88,7 @@ export default function LuxuryHomes() {
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-amber-100 max-w-3xl mx-auto">
               Discover the finest in ultra-luxury living with custom estates,
-              resort-style amenities, and exclusive communities in Las Vegas
+              resort-style amenities, and communities in Las Vegas
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -138,7 +138,7 @@ export default function LuxuryHomes() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Experience the pinnacle of luxury living with custom-designed
-              estates, world-class amenities, and exclusive communities that
+              estates, world-class amenities, and communities that
               define sophisticated living.
             </p>
           </div>
@@ -185,7 +185,7 @@ export default function LuxuryHomes() {
                 <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-amber-600" />
                 </div>
-                <CardTitle>Exclusive Communities</CardTitle>
+                <CardTitle>Communities</CardTitle>
                 <CardDescription>Gated and private enclaves</CardDescription>
               </CardHeader>
               <CardContent>
@@ -278,7 +278,7 @@ export default function LuxuryHomes() {
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Exclusive Communities
+                Communities
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center">

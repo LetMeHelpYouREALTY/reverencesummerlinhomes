@@ -293,7 +293,7 @@ export default function NewConstruction() {
                 <div className="flex items-center">
                   <MapPin className="w-5 h-5 text-orange-600 mr-3" />
                   <span className="text-gray-700">
-                    Henderson - Family-friendly neighborhoods
+                    Henderson - Neighborhoods
                   </span>
                 </div>
                 <div className="flex items-center">

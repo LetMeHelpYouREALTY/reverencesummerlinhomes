@@ -165,7 +165,7 @@ export default function SellingIndex() {
             </p>
             <p className="text-gray-700 mb-4">
               Properties in Reverence Summerlin benefit from the community's
-              reputation for quality construction, excellent schools, and
+              reputation for quality construction, nearby public schools, and
               proximity to amenities. As your Reverence Summerlin real estate
               specialist, I leverage my deep knowledge of local market trends,
               including seasonal patterns, buyer preferences, and pricing
@@ -468,7 +468,7 @@ export default function SellingIndex() {
                 construction and builder warranty
               </li>
               <li>
-                Proximity to top-rated schools serving the Reverence Summerlin
+                Proximity to public schools serving the Reverence Summerlin
                 area
               </li>
               <li>

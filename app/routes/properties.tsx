@@ -131,7 +131,7 @@ export default function Properties() {
       daysOnMarket: 22,
       features: ['Mountain Views', 'Updated Bathrooms', 'Large Yard'],
       description:
-        'Charming home in Henderson with mountain views and a spacious backyard perfect for families.',
+        'Charming home in Henderson with mountain views and a spacious backyard perfect for buyers.',
     },
     {
       id: 4,

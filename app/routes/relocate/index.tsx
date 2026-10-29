@@ -427,7 +427,7 @@ export default function RelocateIndex() {
                     School District Research
                   </h3>
                   <p className="text-gray-600">
-                    Comprehensive analysis of top-rated schools and districts
+                    Comprehensive analysis of nearby public schools and districts
                   </p>
                 </div>
               </div>

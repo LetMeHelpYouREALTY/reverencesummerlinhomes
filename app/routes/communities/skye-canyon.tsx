@@ -42,12 +42,12 @@ export function meta() {
     {
       name: 'description',
       content:
-        'Discover homes for sale in Skye Canyon, Las Vegas. Dr. Jan Duffy specializes in Skye Canyon real estate with modern amenities, outdoor recreation, and family-friendly living.',
+        'Discover homes for sale in Skye Canyon, Las Vegas. Dr. Jan Duffy specializes in Skye Canyon real estate with modern amenities, outdoor recreation, and suburban living.',
     },
     {
       name: 'keywords',
       content:
-        'Skye Canyon homes for sale, Skye Canyon Las Vegas real estate, master-planned community, outdoor recreation, family-friendly, Dr. Jan Duffy',
+        'Skye Canyon homes for sale, Skye Canyon Las Vegas real estate, master-planned community, outdoor recreation, Dr. Jan Duffy',
     },
     {
       property: 'og:title',
@@ -56,7 +56,7 @@ export function meta() {
     {
       property: 'og:description',
       content:
-        'Homes for sale in Skye Canyon, Las Vegas with modern amenities, outdoor recreation, and family-friendly living. Expert real estate guidance from Dr. Jan Duffy.',
+        'Homes for sale in Skye Canyon, Las Vegas with modern amenities, outdoor recreation, and suburban living. Expert real estate guidance from Dr. Jan Duffy.',
     },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
@@ -123,7 +123,7 @@ export default function SkyeCanyon() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Skye Canyon offers a perfect blend of modern amenities and outdoor
               recreation, with master-planned community features, hiking trails,
-              and family-friendly activities in northwest Las Vegas.
+              and activities in northwest Las Vegas.
             </p>
           </div>
 
@@ -169,13 +169,13 @@ export default function SkyeCanyon() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Family-Friendly</CardTitle>
-                <CardDescription>Perfect for families</CardDescription>
+                <CardTitle>Parks & Recreation</CardTitle>
+                <CardDescription>Perfect for buyers</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
                   Designed with families in mind, featuring parks, playgrounds,
-                  community events, and safe neighborhoods.
+                  Community events, and .
                 </p>
               </CardContent>
             </Card>
@@ -499,7 +499,7 @@ export default function SkyeCanyon() {
                       Family Community Expert
                     </h4>
                     <p className="text-gray-600">
-                      Knowledge of family-friendly amenities and community
+                      Knowledge of community amenities and community
                       features
                     </p>
                   </div>
