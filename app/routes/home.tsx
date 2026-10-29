@@ -170,19 +170,6 @@ export default function Home() {
                 </Button>
                 <Button
                   size="lg"
-                  variant="secondary"
-                  className="bg-ctaSecondary-500 hover:bg-ctaSecondary-600 text-white w-full sm:w-auto"
-                  asChild
-                >
-                  <a
-                    href={`tel:+1${config.contact.phoneSecondary.replace(/\D/g, '')}`}
-                  >
-                    <Phone className="w-5 h-5" />
-                    Urgent: {config.contact.phoneSecondary}
-                  </a>
-                </Button>
-                <Button
-                  size="lg"
                   variant="outline"
                   className="border-2 border-white text-white hover:bg-white hover:text-primary transition-all w-full sm:w-auto"
                   asChild
@@ -1068,20 +1055,6 @@ export default function Home() {
               >
                 <Phone className="w-5 h-5" aria-hidden="true" />
                 Call {config.contact.phone}
-              </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="bg-ctaSecondary-500 hover:bg-ctaSecondary-600 text-white w-full sm:w-auto"
-              asChild
-            >
-              <a
-                href={`tel:+1${config.contact.phoneSecondary.replace(/\D/g, '')}`}
-                aria-label={`Call urgent line ${config.contact.phoneSecondary}`}
-              >
-                <Phone className="w-5 h-5" aria-hidden="true" />
-                Urgent: {config.contact.phoneSecondary}
               </a>
             </Button>
             <Button
