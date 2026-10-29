@@ -193,10 +193,10 @@ export async function loader({ params }: Route.LoaderArgs) {
         propertyType: 'Single Family',
         community: 'Summerlin West',
         description:
-          'Beautiful family home in Summerlin West, Reverence Summerlin area, featuring modern amenities and excellent school proximity. This Reverence Summerlin property offers comfortable living spaces, updated kitchen, and private backyard perfect for families. Located in a desirable Reverence Summerlin neighborhood with access to top-rated schools and community amenities.',
+          'Beautiful single-family home in Summerlin West, Reverence Summerlin area, featuring modern amenities near public schools. This Reverence Summerlin property offers comfortable living spaces, updated kitchen, and private backyard. Located in a Reverence Summerlin neighborhood with access to public schools and community amenities.',
         features: [
           'Updated Kitchen with Stainless Appliances',
-          'Family-Friendly Floor Plan',
+          'Floor Plan',
           'Private Backyard with Play Area',
           'Two-Car Garage',
           'Energy Efficient Systems',
@@ -271,7 +271,7 @@ export async function loader({ params }: Route.LoaderArgs) {
         propertyType: 'Single Family',
         community: 'Red Rock Country Club',
         description:
-          "Exceptional golf course home in Red Rock Country Club, Reverence Summerlin area, featuring direct golf course access and luxury finishes. This prestigious Reverence Summerlin property offers championship golf course views, updated interiors, and access to Red Rock Country Club amenities. Located in one of Reverence Summerlin's most exclusive communities, this Red Rock Country Club home provides the ultimate golf lifestyle experience in the Reverence Summerlin area.",
+          "Exceptional golf course home in Red Rock Country Club, Reverence Summerlin area, featuring direct golf course access and luxury finishes. This prestigious Reverence Summerlin property offers championship golf course views, updated interiors, and access to Red Rock Country Club amenities. Located in one of Reverence Summerlin's luxury communities, this Red Rock Country Club home provides the ultimate golf lifestyle experience in the Reverence Summerlin area.",
         features: [
           'Direct Golf Course Access in Red Rock Country Club',
           'Championship Golf Course Views',
@@ -503,7 +503,7 @@ export default function PropertyDetail({ loaderData }: Route.ComponentProps) {
                         This property is located in the Reverence Summerlin
                         area, one of Las Vegas's most desirable master-planned
                         communities. Reverence Summerlin offers exceptional
-                        amenities, top-rated schools, and convenient access to
+                        amenities, nearby public schools, and convenient access to
                         shopping, dining, and recreation. Whether you're seeking
                         Monument at Reverence new construction or established
                         Reverence Summerlin neighborhoods, this property

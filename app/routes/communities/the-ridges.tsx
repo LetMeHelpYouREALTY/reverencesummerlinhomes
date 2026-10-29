@@ -46,7 +46,7 @@ export function meta() {
     {
       name: 'description',
       content:
-        "Discover ultra-luxury homes in The Ridges, Summerlin's most exclusive community. Dr. Jan Duffy specializes in The Ridges real estate with Red Rock views, championship golf, and resort-style amenities.",
+        "Discover ultra-luxury homes in The Ridges, a luxury community in Summerlin. Dr. Jan Duffy specializes in The Ridges real estate with Red Rock views, championship golf, and resort-style amenities.",
     },
     {
       name: 'keywords',
@@ -96,7 +96,7 @@ export default function TheRidges() {
             <p className="text-xl md:text-2xl mb-8 text-emerald-100 max-w-3xl mx-auto">
               Ultra-luxury living at its finest with panoramic Red Rock views,
               championship golf, and resort-style amenities in Summerlin's most
-              exclusive enclave
+              luxury enclave
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -448,7 +448,7 @@ export default function TheRidges() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Exclusive Community</CardTitle>
+                <CardTitle>Community</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-gray-600">

@@ -6,7 +6,7 @@ export function meta() {
     {
       name: 'description',
       content:
-        'Astra La Madre Peaks homes for sale. Dr. Jan Duffy helps you find homes in this exclusive community.',
+        'Astra La Madre Peaks homes for sale. Dr. Jan Duffy helps you find homes in this luxury community.',
     },
   ]
 }

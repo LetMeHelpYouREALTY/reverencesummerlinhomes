@@ -248,7 +248,7 @@ export default function Home() {
             priceMin={400000}
             priceMax={700000}
             title="Featured Las Vegas Properties"
-            subtitle="Explore our latest listings in the Las Vegas and Summerlin area. From luxury homes to family-friendly communities, find your perfect property."
+            subtitle="Explore our latest listings in the Las Vegas and Summerlin area. From luxury homes to communities, find your perfect property."
           />
         </div>
       </section>
@@ -764,7 +764,7 @@ export default function Home() {
               from several key factors that make it particularly attractive to
               homebuyers seeking quality, lifestyle, and value. From Monument at
               Reverence's guard-gated security to established Reverence
-              Summerlin neighborhoods' mature landscaping, from quality schools
+              Summerlin neighborhoods' mature landscaping, from nearby public schools
               serving the area to world-class golf courses nearby, Reverence
               Summerlin offers resources and amenities that enhance property
               values and quality of life.
@@ -807,7 +807,7 @@ export default function Home() {
                   builder warranties, and proximity to Reverence Summerlin's
                   extensive amenities. These Monument at Reverence homes
                   represent exceptional value for Reverence Summerlin buyers
-                  seeking new construction quality with established community
+                  seeking new construction quality with community
                   benefits.
                 </p>
                 <p className="text-gray-700">
@@ -835,13 +835,13 @@ export default function Home() {
                   Established Reverence Summerlin Neighborhoods
                 </CardTitle>
                 <Badge variant="secondary" className="mt-2">
-                  Mature Communities
+                  Older Communities
                 </Badge>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 mb-4">
                   Beyond Monument at Reverence, Reverence Summerlin includes
-                  established neighborhoods with mature landscaping, proven
+                  older neighborhoods with mature landscaping, proven
                   property values, and settled communities that appeal to buyers
                   seeking stability and character. These Reverence Summerlin
                   neighborhoods offer the advantage of established schools,
@@ -853,12 +853,12 @@ export default function Home() {
                   options for buyers with various preferences, budgets, and
                   lifestyle needs. Whether you're seeking larger lots, mature
                   trees, established amenities, or specific architectural
-                  styles, Reverence Summerlin's established neighborhoods offer
+                  styles, Reverence Summerlin's older neighborhoods offer
                   opportunities to find properties that match your vision.
                 </p>
                 <p className="text-gray-700">
                   As your Reverence Summerlin real estate specialist, I'll help
-                  you explore established neighborhoods throughout the area,
+                  you explore older neighborhoods throughout the area,
                   comparing Monument at Reverence new construction with resale
                   opportunities to find the best match for your needs. My
                   comprehensive Reverence Summerlin market knowledge ensures you
@@ -934,7 +934,7 @@ export default function Home() {
                 Summerlin
               </li>
               <li>
-                Quality schools serving Monument at Reverence and Reverence
+                Nearby public schools serving Monument at Reverence and Reverence
                 Summerlin neighborhoods
               </li>
             </ul>
@@ -957,7 +957,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 mb-4">
-                  Reverence Summerlin is served by excellent schools, including
+                  Reverence Summerlin is served by nearby public schools, including
                   top-rated elementary, middle, and high schools that provide
                   quality education for Monument at Reverence residents and
                   other Reverence Summerlin families. These Reverence Summerlin

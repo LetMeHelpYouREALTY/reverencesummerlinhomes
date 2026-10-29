@@ -129,7 +129,7 @@ export default function MilitaryVeterans() {
               Properties in Reverence Summerlin offer excellent value for VA
               loan buyers, with many homes meeting VA appraisal requirements and
               offering features important to military families, such as
-              security, quality schools, and community amenities.
+              security, nearby public schools, and community amenities.
             </p>
             <p className="text-gray-700">
               As your Reverence Summerlin real estate specialist, I understand
@@ -555,7 +555,7 @@ export default function MilitaryVeterans() {
             <p className="text-gray-700 mb-4">
               Reverence Summerlin has developed a strong reputation among
               military veterans for several reasons. The Reverence Summerlin
-              area offers quality housing, excellent schools, strong community
+              area offers quality housing, nearby public schools, strong community
               values, and proximity to military installations that appeal to
               veterans transitioning to civilian life or relocating for new
               assignments. These factors make Reverence Summerlin particularly
@@ -566,10 +566,10 @@ export default function MilitaryVeterans() {
               Communities like Monument at Reverence exemplify the quality
               construction and thoughtful planning that appeal to military
               families. These Reverence Summerlin developments offer modern
-              homes, community amenities, and established neighborhoods that
+              homes, community amenities, and older neighborhoods that
               provide the stability and security military families value. The
               Reverence Summerlin market includes options ranging from new
-              construction in Monument at Reverence to established neighborhoods
+              construction in Monument at Reverence to older neighborhoods
               with mature landscaping and settled communities.
             </p>
             <p className="text-gray-700 mb-4">
@@ -637,7 +637,7 @@ export default function MilitaryVeterans() {
                   advantage of new construction warranties and modern amenities,
                   reducing immediate maintenance concerns that can be
                   challenging during deployments or frequent moves. The
-                  Reverence Summerlin location ensures access to quality schools
+                  Reverence Summerlin location ensures access to public schools
                   and community resources important to military families.
                 </p>
               </CardContent>
@@ -649,7 +649,7 @@ export default function MilitaryVeterans() {
                   Established Reverence Summerlin Neighborhoods
                 </CardTitle>
                 <Badge variant="secondary" className="mt-2">
-                  Mature Communities
+                  Older Communities
                 </Badge>
               </CardHeader>
               <CardContent>
@@ -658,13 +658,13 @@ export default function MilitaryVeterans() {
                   landscaping, settled communities, and proven property values
                   that appeal to military veterans seeking stability. These
                   Reverence Summerlin areas often feature larger lots, mature
-                  trees, and established community amenities that provide
+                  trees, and community amenities that provide
                   immediate lifestyle benefits.
                 </p>
                 <p className="text-gray-700">
                   For military families, established Reverence Summerlin
                   neighborhoods offer the advantage of proven schools,
-                  established community infrastructure, and predictable property
+                  community infrastructure, and predictable property
                   values. These Reverence Summerlin communities appeal to
                   veterans planning longer-term residence or retirement in the
                   area.

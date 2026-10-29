@@ -25,7 +25,7 @@ export const monumentData = {
   description: {
     short:
       "Monument at Reverence offers two-story townhomes ranging from 1,654 – 1,869 square feet in Summerlin's northernmost guard-gated community.",
-    long: `Monument at Reverence by Pulte Homes is the newest neighborhood in the award-winning master-planned community of Summerlin. Located in Reverence, Summerlin's northernmost village, this exclusive community offers modern two-story townhomes with innovative floor plans and energy-efficient features.
+    long: `Monument at Reverence by Pulte Homes is the newest neighborhood in the award-winning master-planned community of Summerlin. Located in Reverence, Summerlin's northernmost village, this community offers modern two-story townhomes with innovative floor plans and energy-efficient features.
 
 Crowning West Summerlin along the border of famed Red Rock Canyon, Reverence is a 300-acre, meticulously designed village developed exclusively by Pulte Homes. The community features 24-hour guard-gated security, resort-style amenities, and stunning views of the surrounding mountains.`,
   },
@@ -48,7 +48,7 @@ Crowning West Summerlin along the border of famed Red Rock Canyon, Reverence is 
     'Fitness center',
     'Walking trails',
     'Parks and playgrounds',
-    'Close to top-rated schools',
+    'Close to public schools',
     'Near shopping and dining',
     'Minutes from Red Rock Canyon',
     'Easy freeway access',

@@ -86,7 +86,7 @@ export default function ResourcesIndex() {
             <p className="text-gray-700 mb-4">
               Reverence Summerlin represents one of Las Vegas's premier
               master-planned communities, offering residents access to
-              world-class amenities, excellent schools, recreational facilities,
+              world-class amenities, nearby public schools, recreational facilities,
               and lifestyle resources that define luxury living in the desert.
               Whether you're considering Monument at Reverence, established
               Reverence Summerlin neighborhoods, or other communities in the
@@ -97,7 +97,7 @@ export default function ResourcesIndex() {
               The Reverence Summerlin area's resources extend beyond basic
               amenities to include comprehensive lifestyle offerings that appeal
               to diverse interests and needs. From championship golf courses
-              near Reverence Summerlin to top-rated schools serving the area,
+              near Reverence Summerlin to nearby public schools serving the area,
               from extensive trail systems connecting Reverence Summerlin
               neighborhoods to community pools and recreation facilities,
               Reverence Summerlin provides resources that enhance quality of
@@ -121,11 +121,11 @@ export default function ResourcesIndex() {
                 <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4">
                   <Award className="w-6 h-6 text-primary-600" />
                 </div>
-                <CardTitle>Top-Rated Schools in Reverence Summerlin</CardTitle>
+                <CardTitle>Public Schools in Reverence Summerlin</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Reverence Summerlin is served by excellent schools, including
+                  Reverence Summerlin is served by nearby public schools, including
                   top-rated elementary, middle, and high schools that provide
                   quality education for Reverence Summerlin families. These
                   schools serve Monument at Reverence and surrounding Reverence
@@ -655,7 +655,7 @@ export default function ResourcesIndex() {
                   considering relocation to the area. This comprehensive guide
                   to Reverence Summerlin resources helps you navigate all
                   aspects of living in the community, from Monument at Reverence
-                  to established neighborhoods.
+                  to older neighborhoods.
                 </p>
                 <p className="text-gray-700">
                   As your Reverence Summerlin real estate specialist, I'm
@@ -738,7 +738,7 @@ export default function ResourcesIndex() {
             </h3>
             <p className="text-gray-700 mb-4">
               The comprehensive resources available in Reverence Summerlin, from
-              Monument at Reverence to established neighborhoods, represent a
+              Monument at Reverence to older neighborhoods, represent a
               significant competitive advantage for property owners. These
               Reverence Summerlin resources enhance property values, attract
               quality buyers, and contribute to the area's strong real estate
@@ -791,7 +791,7 @@ export default function ResourcesIndex() {
             Ready to discover all that Reverence Summerlin resources offer? This
             comprehensive guide provides valuable insights into the exceptional
             lifestyle opportunities available in Reverence Summerlin, from
-            Monument at Reverence to established neighborhoods. Whether you're a
+            Monument at Reverence to older neighborhoods. Whether you're a
             prospective buyer, current Reverence Summerlin resident, or family
             considering relocation, understanding these Reverence Summerlin
             resources helps you make informed decisions about your real estate

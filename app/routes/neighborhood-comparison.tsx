@@ -98,8 +98,8 @@ const neighborhoodData = [
     pros: [
       'Stunning mountain views',
       'World-class amenities',
-      'Excellent schools',
-      'Low crime rate',
+      'Nearby public schools',
+      'Public crime data online',
       'Strong appreciation',
     ],
     cons: [
@@ -112,7 +112,7 @@ const neighborhoodData = [
   {
     id: 'henderson',
     name: 'Henderson',
-    description: 'Family-friendly community with great schools and amenities',
+    description: 'Community with nearby public schools and amenities',
     medianPrice: 650000,
     pricePerSqFt: 195,
     avgDaysOnMarket: 18,
@@ -147,10 +147,10 @@ const neighborhoodData = [
       shopping: 8,
     },
     pros: [
-      'Excellent schools',
-      'Family-friendly',
+      'Nearby public schools',
+      'Parks nearby',
       'Good value',
-      'Safe community',
+      'Community',
       'Growing area',
     ],
     cons: [
@@ -205,7 +205,7 @@ const neighborhoodData = [
     pros: [
       'Walkable lifestyle',
       'Entertainment options',
-      'Good schools',
+      'Nearby public schools',
       'Central location',
       'Modern amenities',
     ],
