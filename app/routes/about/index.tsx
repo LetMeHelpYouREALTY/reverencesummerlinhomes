@@ -70,7 +70,7 @@ export default function AboutIndex() {
             About Dr. Jan Duffy: Reverence Summerlin Real Estate Expert
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover why Dr. Jan Duffy, a Top 1% Las Vegas REALTOR® in real estate since 1983, is the trusted choice for real estate in
+            Discover why Dr. Jan Duffy, a Las Vegas REALTOR® licensed since 2008 with 35 years in Las Vegas, is the trusted choice for real estate in
             Reverence Summerlin, Monument at Reverence, and throughout Las
             Vegas. With deep local expertise, specialized certifications, and a
             commitment to exceptional service, I help clients achieve their
