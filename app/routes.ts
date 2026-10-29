@@ -38,6 +38,14 @@ export default [
       route('chicago', 'routes/relocate/chicago.tsx'),
     ]),
 
+    // About section (inside layout so the site footer renders)
+    ...prefix('about', [
+      index('routes/about/index.tsx'),
+      route('media', 'routes/about/media.tsx'),
+      route('reviews', 'routes/about/reviews.tsx'),
+      route('zillow-premier', 'routes/about/zillow-premier.tsx'),
+    ]),
+
     // Communities section
     ...prefix('communities', [
       index('routes/communities/index.tsx'),
@@ -101,11 +109,4 @@ export default [
   route('sitemap-properties.xml', 'routes/api/sitemap-properties.tsx'),
   route('sitemap-images.xml', 'routes/api/sitemap-images.tsx'),
 
-  // About section (outside layout)
-  ...prefix('about', [
-    index('routes/about/index.tsx'),
-    route('media', 'routes/about/media.tsx'),
-    route('reviews', 'routes/about/reviews.tsx'),
-    route('zillow-premier', 'routes/about/zillow-premier.tsx'),
-  ]),
 ] satisfies RouteConfig

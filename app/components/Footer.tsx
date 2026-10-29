@@ -23,11 +23,8 @@ export function Footer() {
               <p className="text-sm text-white/95">
                 Las Vegas Real Estate Expert
               </p>
-              <p className="text-sm font-medium text-gold-light mt-2">
-                Berkshire Hathaway HomeServices Nevada Properties
-              </p>
-              <p className="text-xs text-white/80 mt-1">
-                License # {config.agent.license}
+                            <p className="text-sm font-medium text-gold-light mt-2">
+                In real estate since 1983
               </p>
             </div>
             <div className="text-white/95">
@@ -194,11 +191,9 @@ export function Footer() {
               <span className="font-semibold text-white">
                 {config.agent.name}
               </span>{' '}
-              | Las Vegas Real Estate Expert
+                            | Las Vegas Real Estate Expert
               <br />
-              Berkshire Hathaway HomeServices Nevada Properties
-              <br />
-              License # {config.agent.license}
+              Berkshire Hathaway HomeServices Nevada Properties since September 2008 · License {config.agent.license}
             </p>
           </div>
         </div>
