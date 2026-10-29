@@ -24,7 +24,7 @@ export function Footer() {
                 Las Vegas Real Estate Expert
               </p>
                             <p className="text-sm font-medium text-gold-light mt-2">
-                In real estate since 1983
+                Licensed since 2008 · 35 years in Las Vegas
               </p>
             </div>
             <div className="text-white/95">
