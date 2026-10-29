@@ -559,7 +559,7 @@ export default function DowntownSummerlin() {
                 <div className="flex items-center">
                   <Award className="w-6 h-6 text-purple-600 mr-3" />
                   <span className="text-gray-700">
-                    Top 1% of Las Vegas agents
+                    5.0★ from 50 Realtor.com reviews
                   </span>
                 </div>
                 <div className="flex items-center">

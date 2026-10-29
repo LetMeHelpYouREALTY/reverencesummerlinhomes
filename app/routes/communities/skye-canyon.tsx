@@ -538,7 +538,7 @@ export default function SkyeCanyon() {
                 <div className="flex items-center">
                   <Award className="w-6 h-6 text-blue-600 mr-3" />
                   <span className="text-gray-700">
-                    Top 1% of Las Vegas agents
+                    5.0★ from 50 Realtor.com reviews
                   </span>
                 </div>
                 <div className="flex items-center">
