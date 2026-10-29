@@ -49,7 +49,7 @@ export function meta() {
     {
       name: 'keywords',
       content:
-        'Kestrel homes for sale, Kestrel Las Vegas real estate, luxury living, natural beauty, exclusive community, Dr. Jan Duffy',
+        'Kestrel homes for sale, Kestrel Las Vegas real estate, luxury living, natural beauty, community, Dr. Jan Duffy',
     },
     {
       property: 'og:title',
@@ -142,7 +142,7 @@ export default function Kestrel() {
               <CardContent>
                 <p className="text-gray-600">
                   Experience luxury living with premium amenities, high-end
-                  finishes, and exclusive community features designed for
+                  finishes, and community features designed for
                   discerning homeowners.
                 </p>
               </CardContent>
@@ -170,7 +170,7 @@ export default function Kestrel() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Exclusive Community</CardTitle>
+                <CardTitle>Community</CardTitle>
                 <CardDescription>Private and secure living</CardDescription>
               </CardHeader>
               <CardContent>
@@ -315,7 +315,7 @@ export default function Kestrel() {
               Kestrel Neighborhoods
             </h2>
             <p className="text-xl text-gray-600">
-              Discover the exclusive neighborhoods and luxury home styles in
+              Discover the luxury neighborhoods and luxury home styles in
               Kestrel
             </p>
           </div>

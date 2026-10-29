@@ -57,7 +57,7 @@ export default function RelocateSummerlin() {
           </h2>
           <p className="text-gray-700 mb-4">
             Summerlin is Las Vegas's premier master-planned community, offering
-            exceptional quality of life with top-rated schools, world-class
+            exceptional quality of life with nearby public schools, world-class
             amenities, and beautiful homes. Whether you're relocating for work,
             retirement, or lifestyle, Summerlin provides everything you need for
             a successful move.

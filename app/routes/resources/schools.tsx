@@ -6,7 +6,7 @@ export function meta() {
     {
       name: 'description',
       content:
-        'Las Vegas schools guide. Dr. Jan Duffy helps you find the best schools in Las Vegas and Summerlin.',
+        'Las Vegas schools guide. Dr. Jan Duffy helps you find the public schools in Las Vegas and Summerlin.',
     },
   ]
 }
@@ -19,7 +19,7 @@ export default function Schools() {
           Las Vegas Schools
         </h1>
         <p className="text-xl text-gray-600">
-          Find the best schools in Las Vegas and Summerlin.
+          Find the public schools in Las Vegas and Summerlin.
         </p>
       </div>
     </div>

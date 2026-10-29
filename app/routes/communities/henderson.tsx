@@ -35,26 +35,26 @@ export function meta() {
   return [
     {
       title:
-        'Henderson Homes for Sale | Family-Friendly Living in Nevada | Dr. Jan Duffy',
+        'Henderson Homes for Sale | Living in Nevada | Dr. Jan Duffy',
     },
     {
       name: 'description',
       content:
-        'Discover homes for sale in Henderson, Nevada. Dr. Jan Duffy specializes in Henderson real estate with family-friendly communities, excellent schools, and outdoor recreation.',
+        'Discover homes for sale in Henderson, Nevada. Dr. Jan Duffy specializes in Henderson real estate with master-planned communities, nearby schools, and outdoor recreation.',
     },
     {
       name: 'keywords',
       content:
-        'Henderson homes for sale, Henderson Nevada real estate, family-friendly communities, excellent schools, Dr. Jan Duffy',
+        'Henderson homes for sale, Henderson Nevada real estate, master-planned communities, nearby schools, Dr. Jan Duffy',
     },
     {
       property: 'og:title',
-      content: 'Henderson Homes for Sale | Family-Friendly Living in Nevada',
+      content: 'Henderson Homes for Sale | Living in Nevada',
     },
     {
       property: 'og:description',
       content:
-        'Homes for sale in Henderson, Nevada with family-friendly communities, excellent schools, and outdoor recreation. Expert real estate guidance from Dr. Jan Duffy.',
+        'Homes for sale in Henderson, Nevada with master-planned communities, nearby schools, and outdoor recreation. Expert real estate guidance from Dr. Jan Duffy.',
     },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
@@ -65,7 +65,7 @@ export function meta() {
     {
       name: 'twitter:description',
       content:
-        'Homes for sale in Henderson, Nevada with family-friendly communities and excellent schools.',
+        'Homes for sale in Henderson, Nevada with master-planned communities and nearby schools.',
     },
   ]
 }
@@ -80,14 +80,14 @@ export default function Henderson() {
           <div className="text-center">
             <Badge className="mb-4 bg-white/20 text-white border-white/30">
               <TreePine className="w-4 h-4 mr-2" />
-              Family-Friendly Living
+              Suburban living
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Henderson Homes
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-teal-100 max-w-3xl mx-auto">
-              Discover family-friendly living in Henderson, Nevada with
-              excellent schools, outdoor recreation, and master-planned
+              Discover living in Henderson, Nevada with
+              nearby public schools, outdoor recreation, and master-planned
               communities
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -120,7 +120,7 @@ export default function Henderson() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Henderson offers the perfect blend of suburban comfort and urban
-              convenience, with top-rated schools, beautiful parks, and
+              convenience, with nearby public schools, beautiful parks, and
               master-planned communities that cater to families and
               professionals alike.
             </p>
@@ -132,14 +132,14 @@ export default function Henderson() {
                 <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
                   <GraduationCap className="w-6 h-6 text-teal-600" />
                 </div>
-                <CardTitle>Top-Rated Schools</CardTitle>
+                <CardTitle>Nearby Public Schools</CardTitle>
                 <CardDescription>
                   Excellent educational opportunities
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Henderson is home to some of Nevada's top-rated schools,
+                  Henderson is home to some of Nevada's nearby public schools,
                   including Green Valley High School and Advanced Technologies
                   Academy.
                 </p>
@@ -205,7 +205,7 @@ export default function Henderson() {
                   <CheckCircle className="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-gray-900">
-                      Top-Rated Schools
+                      Nearby Public Schools
                     </h4>
                     <p className="text-gray-600">
                       Clark County School District with excellent ratings
@@ -239,10 +239,10 @@ export default function Henderson() {
                   <CheckCircle className="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-gray-900">
-                      Low Crime Rate
+                      Public Crime Maps
                     </h4>
                     <p className="text-gray-600">
-                      One of Nevada's safest cities with excellent safety
+                      Nevada's second-largest city, with crime data published online
                       ratings
                     </p>
                   </div>
@@ -251,10 +251,10 @@ export default function Henderson() {
                   <CheckCircle className="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-gray-900">
-                      Family-Friendly
+                      Parks Nearby
                     </h4>
                     <p className="text-gray-600">
-                      Perfect for families with children and young professionals
+                      Perfect for buyers who want more bedrooms and professionals
                     </p>
                   </div>
                 </div>
@@ -319,8 +319,8 @@ export default function Henderson() {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• Mature neighborhoods</li>
-                  <li>• Excellent schools</li>
+                  <li>• Older neighborhoods</li>
+                  <li>• Nearby public schools</li>
                   <li>• Shopping centers</li>
                   <li>• Parks & recreation</li>
                   <li>• Established amenities</li>
@@ -368,7 +368,7 @@ export default function Henderson() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Top-Rated Schools
+              Nearby Public Schools
             </h2>
             <p className="text-xl text-gray-600">
               Excellent educational opportunities for families in Henderson

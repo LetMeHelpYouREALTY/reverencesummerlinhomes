@@ -141,7 +141,7 @@ export default function Contact() {
               <CardContent>
                 <p className="text-gray-600">
                   Deep knowledge of Reverence Summerlin real estate markets,
-                  including Monument at Reverence, established neighborhoods,
+                  including Monument at Reverence, older neighborhoods,
                   and investment opportunities. Contact me for comprehensive
                   Reverence Summerlin market analysis.
                 </p>
@@ -190,7 +190,7 @@ export default function Contact() {
               </li>
               <li>
                 Reverence Summerlin home buying assistance, including
-                established neighborhoods
+                older neighborhoods
               </li>
               <li>
                 Comprehensive Reverence Summerlin market analysis and property

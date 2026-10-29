@@ -446,7 +446,7 @@ export default function NewHome() {
                 amenities
               </li>
               <li>
-                Proximity to top-rated schools serving the Reverence Summerlin
+                Proximity to public schools serving the Reverence Summerlin
                 area
               </li>
               <li>
