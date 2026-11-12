@@ -29,7 +29,7 @@ export const config = {
     youtube: 'https://youtube.com/@drjanduffy',
   },
   seo: {
-    siteUrl: 'https://reverencesummerlinhomes.com',
+    siteUrl: 'https://www.reverencesummerlinhomes.com',
     siteName: 'Reverence Summerlin Homes | Dr. Jan Duffy',
     description:
       'Reverence Summerlin and Monument at Reverence real estate with Dr. Jan Duffy, Pulte specialist. Buying, selling, and tours in Summerlin West. Call (702) 930-8222.',

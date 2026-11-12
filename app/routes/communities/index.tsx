@@ -1,4 +1,9 @@
+import { config } from '~/lib/config'
 import type { Route } from './+types/communities'
+
+export function links() {
+  return [{ rel: 'canonical', href: `${config.seo.siteUrl}/communities` }]
+}
 
 export function meta() {
   return [

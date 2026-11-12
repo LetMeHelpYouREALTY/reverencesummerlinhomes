@@ -36,6 +36,14 @@ import {
   reverenceFaqPageSchema,
 } from '~/lib/reverence-faq'
 
+// Community cards whose id has its own /communities/<id> route; others link to the hub
+const COMMUNITY_PAGE_IDS = new Set([
+  'monument-at-reverence',
+  'summerlin-west',
+  'downtown-summerlin',
+  'the-ridges',
+])
+
 export function meta() {
   const title = 'Reverence Summerlin Homes | Dr. Jan Duffy'
   const description = config.seo.description
@@ -416,7 +424,13 @@ export default function Home() {
                             ))}
                         </div>
                         <Button asChild className="w-full">
-                          <Link to={`/communities/${community.id}`}>
+                          <Link
+                            to={
+                              COMMUNITY_PAGE_IDS.has(community.id)
+                                ? `/communities/${community.id}`
+                                : '/communities'
+                            }
+                          >
                             Learn More About {community.name}
                             <ArrowRight
                               className="w-4 h-4 ml-2"

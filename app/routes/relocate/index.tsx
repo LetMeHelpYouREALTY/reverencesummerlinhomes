@@ -27,6 +27,10 @@ import {
   Award,
 } from 'lucide-react'
 
+export function links() {
+  return [{ rel: 'canonical', href: `${config.seo.siteUrl}/relocate` }]
+}
+
 export function meta() {
   return [
     {

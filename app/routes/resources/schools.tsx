@@ -1,4 +1,9 @@
+import { config } from '~/lib/config'
 import type { Route } from './+types/resources'
+
+export function links() {
+  return [{ rel: 'canonical', href: `${config.seo.siteUrl}/resources/schools` }]
+}
 
 export function meta() {
   return [

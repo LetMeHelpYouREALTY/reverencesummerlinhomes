@@ -155,20 +155,6 @@ export function Footer() {
               © 2025 Dr. Jan Duffy - Reverence Summerlin Homes | All Rights
               Reserved
             </div>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link
-                to="/privacy"
-                className="text-white/90 hover:text-gold-light text-sm transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                to="/sitemap"
-                className="text-white/90 hover:text-gold-light text-sm transition-colors"
-              >
-                Sitemap
-              </Link>
-            </div>
           </div>
 
           <div className="mt-4 text-white/85 text-xs leading-relaxed">

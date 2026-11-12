@@ -1,5 +1,7 @@
 import type { Route } from './+types/buying-military-veterans'
 import { config } from '~/lib/config'
+import { RealScoutAdvancedSearch } from '~/components/RealScoutAdvancedSearch'
+import { RealScoutListingsWidget } from '~/components/RealScoutListingsWidget'
 import { Link } from 'react-router'
 import { Button } from '~/components/ui/button'
 import {

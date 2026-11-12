@@ -1,4 +1,9 @@
+import { config } from '~/lib/config'
 import type { Route } from './+types/selling-marketing'
+
+export function links() {
+  return [{ rel: 'canonical', href: `${config.seo.siteUrl}/selling/marketing` }]
+}
 
 export function meta() {
   return [

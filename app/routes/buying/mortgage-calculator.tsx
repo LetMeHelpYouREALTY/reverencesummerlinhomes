@@ -1,3 +1,4 @@
+import { config } from '~/lib/config'
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { Button } from '~/components/ui/button'
@@ -22,6 +23,10 @@ import {
   Mail,
 } from 'lucide-react'
 import type { Route } from './+types/buying-mortgage-calculator'
+
+export function links() {
+  return [{ rel: 'canonical', href: `${config.seo.siteUrl}/buying/mortgage-calculator` }]
+}
 
 export function meta() {
   return [

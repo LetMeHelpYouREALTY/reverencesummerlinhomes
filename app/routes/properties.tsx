@@ -457,7 +457,7 @@ export default function Properties() {
                 <div className="space-y-2">
                   <div className="flex gap-2">
                     <Button asChild className="flex-1">
-                      <Link to={`/properties/${property.id}`}>
+                      <Link to="/contact">
                         View Details
                       </Link>
                     </Button>
