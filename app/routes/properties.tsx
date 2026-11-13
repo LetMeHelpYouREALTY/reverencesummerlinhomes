@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { Card, CardContent } from '~/components/ui/card'
 import { Button } from '~/components/ui/button'
 import { RealScoutListingsWidget } from '~/components/RealScoutListingsWidget'
@@ -94,17 +95,23 @@ export default function Properties() {
               <Button
                 size="lg"
                 className="bg-white text-primary-700 hover:bg-primary-50"
+                asChild
               >
-                <Phone className="w-5 h-5 mr-2" />
-                Call {config.contact.phone}
+                <a href={`tel:+1${config.contact.phone.replace(/\D/g, '')}`}>
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call {config.contact.phone}
+                </a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-primary-700"
+                asChild
               >
-                <Mail className="w-5 h-5 mr-2" />
-                Schedule Consultation
+                <Link to="/contact">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Schedule Consultation
+                </Link>
               </Button>
             </div>
           </CardContent>
